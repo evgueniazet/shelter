@@ -12,9 +12,18 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(scss|css)$/,
-        use: ['style-loader', 'css-loader', 'sass-loader'],
+        test: /\.(s[ac]|c)ss$/i,
+        use: [
+          'style-loader',
+          'css-loader',
+          'resolve-url-loader',
+          { loader: 'sass-loader', options: { sourceMap: true } },
+        ],
       },
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: 'asset/resource',
+      }
     ]
   },
   plugins: [

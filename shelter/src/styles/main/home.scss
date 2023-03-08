@@ -1,0 +1,112 @@
+@import '../variables.scss';
+
+.home {
+    background-image: url('../../assets/images/background.svg');
+    background-size: cover;
+    width: 100%;
+    height: 910px;
+    padding: 60px 40px 0 40px;
+    box-sizing: border-box;
+
+    &-info {
+        margin-top: 60px;
+        display: flex;
+        justify-content: space-between;
+
+        &-title {
+            color: $light-xl;
+            font-family: $georgia;
+            font-weight: 400;
+            font-size: 44px;
+            line-height: 57px;
+            width: 310px;
+            margin: 0;
+        }
+
+        &-description {
+            color: $dark-s;
+            font-family: $arial;
+            font-weight: 400;
+            font-size: 15px;
+            line-height: 24px;
+            width: 460px;
+            margin: 0;
+            margin-top: 42px;
+        }
+
+        &-wrapper {
+            display: flex;
+            align-items: center;
+        }
+
+    }
+
+    &-button {
+        background-color: $primary;
+        padding: 15px 45px;
+        border-radius: 100px;
+        color: $dark-3xl;
+        font-family: $georgia;
+        font-weight: 400;
+        font-size: 17px;
+        line-height: 22px;
+        margin-top: 42px;
+        border: none;
+        transition: box-shadow .3s linear;
+        cursor: pointer;
+
+
+        &:hover {
+            box-shadow: 0 0 10px $light-xl;
+            transition: box-shadow .3s linear;
+        }
+    }
+
+    &-img {
+        width: 700px;
+    }
+}
+
+.header {
+
+    display: flex;
+    justify-content: space-between;
+
+    &-logo {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &-link {
+        font-family: $arial;
+        margin-left: 35px;
+        color: $dark-s;
+        line-height: 24px;
+        font-size: 15px;
+        text-decoration: none;
+        cursor: pointer;
+
+        &:first-child {
+            border-bottom: solid $primary;
+        }
+    }
+}
+
+
+.logo {
+    font-family: $georgia;
+    font-size: 32px;
+    font-weight: 400;
+    color: $primary;
+    line-height: 35px;
+    margin: 0;
+
+    &-text {
+        font-family: $arial;
+        font-weight: 400;
+        font-size: 13px;
+        color: $light-xl;
+        line-height: 15px;
+        margin-top: 10px;
+    }
+}
