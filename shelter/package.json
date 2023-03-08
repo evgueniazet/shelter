@@ -1,5 +1,24 @@
 {
+  "scripts": {
+    "start": "webpack-dev-server --open --config webpack.dev.config.js",
+    "build": "webpack --config webpack.build.config.js"
+  },
   "dependencies": {
+    "copy-webpack-plugin": "^11.0.0",
+    "css-loader": "^6.7.3",
+    "hot-reload-server": "^0.1.1",
+    "http-proxy-middleware": "^2.0.6",
+    "mini-css-extract-plugin": "^2.7.3",
+    "node-sass": "^8.0.0",
+    "sass-loader": "^13.2.0",
+    "style-loader": "^3.3.1",
     "webpack-5": "^0.0.0"
+  },
+  "devDependencies": {
+    "html-loader": "^4.2.0",
+    "html-webpack-plugin": "^5.5.0",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1",
+    "webpack-dev-server": "^4.11.1"
   }
 }
