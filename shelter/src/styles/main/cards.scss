@@ -1,0 +1,121 @@
+@import '../variables.scss';
+
+.cards {
+    background-color: $light-l;
+    padding: 80px 40px 100px 40px;
+    box-sizing: border-box;
+
+
+    &-wrapper {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &-title {
+        margin: 0;
+        margin: 0 auto;
+        width: 400px;
+        font-family: $georgia;
+        font-weight: 400;
+        line-height: 47px;
+        font-size: 35px;
+        color: $dark-l;
+        text-align: center;
+    }
+
+    &-container {
+        display: flex;
+        justify-content: center;
+        margin-top: 60px;
+    }
+
+    &-button-left {
+        position: absolute;
+        left: 0;
+        bottom: 50%;
+        background-color: transparent;
+        border-radius: 50%;
+        padding: 20px 23px;
+        border: solid 2px $primary;
+        height: 60px;
+        cursor: pointer;
+        transition: border .3s linear;
+
+        &:hover {
+            border: 2px solid rgb(233, 122, 31);
+            transition: border .3s linear;
+        }
+    }
+
+    &-button-right {
+        position: absolute;
+        right: 0;
+        bottom: 50%;
+        background-color: transparent;
+        border-radius: 50%;
+        padding: 20px 23px;
+        height: 60px;
+        border: solid 2px $primary;
+        cursor: pointer;
+        transition: border .3s linear;
+
+        &:hover {
+            border: 2px solid rgb(233, 122, 31);
+            transition: border .3s linear;
+        }
+    }
+
+    &-button {
+        width: 260px;
+        background-color: $primary;
+        border-radius: 100px;
+        border: none;
+        padding: 15px 45px;
+        margin-top: 60px;
+    }
+}
+
+.container {
+    width: 990px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.card {
+    background-color: $light-s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+
+    &-img {
+        width: 270px;
+    }
+
+    &-title {
+        margin: 0;
+        margin-top: 30px;
+        text-align: center;
+        color: $dark-l;
+        font-family: $georgia;
+        font-weight: 400;
+        line-height: 23px;
+        font-size: 20px;
+    }
+
+    &-button {
+        font-family: $georgia;
+        font-size: 17px;
+        font-weight: 400;
+        line-height: 22px;
+        color: $dark-3xl;
+        background-color: transparent;
+        border-radius: 100px;
+        border: 2px solid $primary;
+        padding: 15px 45px;
+        width: 188px;
+        margin: 30px 0;
+    }
+}
