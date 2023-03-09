@@ -1,0 +1,84 @@
+@import '../variables.scss';
+
+.donation {
+    display: flex;
+    justify-content: space-between;
+    padding: 80px 182px 100px 182px;
+    background-color: $light-l;
+
+    &-img {
+        width: 506px;
+    }
+
+    &-info {
+
+        margin-left: 30px;
+
+
+        &-title {
+            font-family: $georgia;
+            font-size: 35px;
+            line-height: 46px;
+            font-weight: 400;
+            color: $dark-l;
+            width: 300px;
+            margin: 0;
+        }
+
+        &-text {
+            margin: 0;
+            margin-top: 20px;
+            font-family: $arial;
+            font-style: italic;
+            color: $dark-m;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 18px;
+        }
+    }
+
+    &-card {
+        display: flex;
+        box-sizing: border-box;
+        background-color: $primary;
+        border-radius: 9px;
+        padding: 10px 15px;
+        width: 350px;
+        margin-top: 20px;
+        cursor: pointer;
+        transition: box-shadow .3s linear;
+
+
+        &:hover {
+            box-shadow: 0 0 10px rgb(255, 121, 39);
+            transition: box-shadow .3s linear;
+        }
+
+        &-icon {
+            width: 30px;
+        }
+
+        &-number {
+            font-family: $georgia;
+            color: $dark-l;
+            font-size: 20px;
+            line-height: 23px;
+            font-weight: 400;
+            margin: 0;
+            margin-left: 15px;
+            text-decoration: none;
+        }
+
+        &-description {
+            margin: 0;
+            font-family: $georgia;
+            color: $dark-l;
+            font-weight: 400;
+            font-size: 15px;
+            line-height: 17px;
+            margin-top: 20px;
+        }
+    }
+
+
+}
