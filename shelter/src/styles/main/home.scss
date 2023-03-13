@@ -4,7 +4,7 @@
     background-image: url('../../assets/images/background.svg');
     background-size: cover;
     width: 100%;
-    height: 910px;
+    // height: 910px;
     padding: 60px 40px 0 40px;
     box-sizing: border-box;
 
@@ -77,6 +77,10 @@
         flex-direction: column;
     }
 
+    &-burger {
+        display: none;
+    }
+
     &-link {
         font-family: $arial;
         margin-left: 35px;
@@ -109,4 +113,64 @@
         line-height: 15px;
         margin-top: 10px;
     }
+}
+
+@media screen and (max-width: 320px) {
+
+    .header {
+
+        justify-content: flex-start;
+
+        &-nav {
+            display: none;
+        }
+
+        &-burger {
+            display: block;
+            margin-left: 43px;
+
+
+            &-item {
+                display: block;
+                margin-top: 10px;
+                width: 30px;
+                height: 2px;
+                background-color: $primary;
+            }
+        }
+    }
+
+    .home {
+
+        padding: 30px 10px 0 10px;
+
+        &-info {
+            flex-direction: column;
+
+            &-title {
+                font-size: 25px;
+                line-height: 33px;
+                text-align: center;
+                width: 300px;
+            }
+
+            &-description {
+                width: 300px;
+                margin-top: 19px;
+            }
+
+        }
+
+        &-button {
+            margin-top: 65px;
+        }
+
+        &-img {
+            width: 260px;
+            margin-top: 105px;
+        }
+    }
+
+
+
 }
