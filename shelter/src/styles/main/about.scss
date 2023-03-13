@@ -38,3 +38,34 @@
         margin-top: 25px;
     }
 }
+
+@media screen and (max-width: 320px) {
+    .about {
+
+        padding: 42px 10px;
+
+        &-wrapper {
+            flex-direction: column;
+        }
+
+        &-title {
+            font-size: 25px;
+            line-height: 32px;
+        }
+
+        &-img {
+            order: 1;
+            margin-top: 42px;
+        }
+
+        &-text {
+            text-align: center;
+            margin-top: 22px;
+        }
+
+        &-text-wrapper {
+            margin: 0;
+            width: 100%;
+        }
+    }
+}
