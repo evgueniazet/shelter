@@ -79,6 +79,40 @@
             margin-top: 20px;
         }
     }
+}
 
+@media screen and (max-width: 320px) {
+    .donation {
+        padding: 42px 20px;
+        flex-direction: column;
 
+        &-info {
+            margin: 0;
+
+            &-title {
+                font-size: 25px;
+                line-height: 33px;
+            }
+
+            
+        }
+
+        &-card {
+            width: 280px;
+
+            &-number {
+                font-size: 15px;
+            }
+        }
+
+        &-card-description {
+            line-height: 21px;
+        }
+
+        &-img {
+            order: 1;
+            width: 260px;
+            margin-top: 42px;
+        }
+    }
 }
