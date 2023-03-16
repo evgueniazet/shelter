@@ -89,9 +89,15 @@
         font-size: 15px;
         text-decoration: none;
         cursor: pointer;
+        transition: color .3s ease;
 
         &:first-child {
             border-bottom: solid $primary;
+        }
+
+        &:hover {
+            color: $primary;
+            transition: color .3s ease;
         }
     }
 }
@@ -104,6 +110,7 @@
     color: $primary;
     line-height: 35px;
     margin: 0;
+    cursor: pointer;
 
     &-text {
         font-family: $arial;

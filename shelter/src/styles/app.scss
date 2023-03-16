@@ -5,10 +5,14 @@
 @import './main/cards.scss';
 @import './main/manual.scss';
 @import './main/donation.scss';
+@import './main/footer.scss';
 
 
 body {
+    display: flex;
+    justify-content: center;
     margin: 0;
+
 }
 
 .wrapper {

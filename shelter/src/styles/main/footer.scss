@@ -1,0 +1,36 @@
+@import '../variables.scss';
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 56px 40px 0 40px;
+    background-image: url('../../assets/images/background.svg');
+
+    &>div {
+        width: 275px;
+    }
+
+    &-title {
+        margin: 0;
+        color: $light-xl;
+        font-size: 35px;
+        line-height: 46px;
+        font-weight: 400;
+        font-family: $georgia;
+    }
+
+    &-link {
+        display: flex;
+        align-items: center;
+        margin-top: 35px;
+
+        &-text {
+            margin-left: 20px;
+            font-family: $georgia;
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 23px;
+            color: $primary;
+        }
+    }
+}

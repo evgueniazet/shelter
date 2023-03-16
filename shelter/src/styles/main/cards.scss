@@ -74,6 +74,13 @@
         border: none;
         padding: 15px 45px;
         margin-top: 60px;
+        cursor: pointer;
+        transition: box-shadow .3s linear;
+
+        &:hover {
+            box-shadow: 0 0 10px #eb700c;
+            transition: box-shadow .3s linear;
+        }
     }
 }
 
@@ -117,6 +124,9 @@
         padding: 15px 45px;
         width: 188px;
         margin: 30px 0;
+        cursor: pointer;
+        transition: border .3s linear;
+
     }
 }
 
