@@ -1,10 +1,9 @@
 @import '../variables.scss';
 
 .home {
-    background-image: url('../../assets/images/background.svg');
+    background-image: url('../../images/background.svg');
     background-size: cover;
     width: 100%;
-    // height: 910px;
     padding: 60px 40px 0 40px;
     box-sizing: border-box;
 
@@ -36,14 +35,18 @@
 
         &-wrapper {
             display: flex;
-            align-items: center;
+            // align-items: center;
+        }
+
+        &-text {
+            margin-top: 163px;
         }
 
     }
 
     &-button {
         background-color: $primary;
-        padding: 15px 45px;
+        padding: 15px 52px;
         border-radius: 100px;
         color: $dark-3xl;
         font-family: $georgia;
@@ -71,11 +74,36 @@
 
     display: flex;
     justify-content: space-between;
+    align-items: center;
 
     &-logo {
+        font-family: $georgia;
+        font-size: 32px;
+        font-weight: 400;
+        color: $primary;
+        line-height: 35px;
+        margin: 0;
+        cursor: pointer;
+        letter-spacing: 2px;
+
+        &-text {
+            font-family: $arial;
+            font-weight: 400;
+            font-size: 13px;
+            color: $light-xl;
+            line-height: 15px;
+            letter-spacing: 1.5px;
+            margin-top: 10px;
+        }
+    }
+
+    &-wrapper {
         display: flex;
         flex-direction: column;
+        // width: 184px;
+
     }
+
 
     &-burger {
         display: none;
@@ -83,16 +111,17 @@
 
     &-link {
         font-family: $arial;
-        margin-left: 35px;
+        margin-left: 32px;
         color: $dark-s;
         line-height: 24px;
         font-size: 15px;
         text-decoration: none;
+        height: 100px;
         cursor: pointer;
         transition: color .3s ease;
 
         &:first-child {
-            border-bottom: solid $primary;
+            border-bottom: 3px solid $primary;
         }
 
         &:hover {
@@ -103,24 +132,6 @@
 }
 
 
-.logo {
-    font-family: $georgia;
-    font-size: 32px;
-    font-weight: 400;
-    color: $primary;
-    line-height: 35px;
-    margin: 0;
-    cursor: pointer;
-
-    &-text {
-        font-family: $arial;
-        font-weight: 400;
-        font-size: 13px;
-        color: $light-xl;
-        line-height: 15px;
-        margin-top: 10px;
-    }
-}
 
 @media screen and (max-width: 320px) {
 

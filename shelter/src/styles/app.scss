@@ -1,20 +1,23 @@
 @import './normalize.scss';
 @import './variables.scss';
-@import './main/home.scss';
-@import './main/about.scss';
-@import './main/cards.scss';
-@import './main/manual.scss';
-@import './main/donation.scss';
+@import './pets/header.scss';
+@import './pets/cards.scss';
 @import './main/footer.scss';
 
 
 body {
     display: flex;
     justify-content: center;
-    margin: 0;
-
+    // margin: 0;
+    // box-sizing: border-box;
 }
 
 .wrapper {
-    max-width: 1280px;
+    width: 1280px;
+}
+
+@media screen and (max-width: 768px) {
+    .wrapper {
+        width: 768px;
+    }
 }

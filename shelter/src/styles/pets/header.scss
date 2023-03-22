@@ -1,0 +1,64 @@
+@import '../variables.scss';
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 30px 40px;
+    background-color: $light-xl;
+
+
+    &-logo {
+        font-family: $georgia;
+        font-size: 32px;
+        font-weight: 400;
+        color: $dark-l;
+        line-height: 35px;
+        margin: 0;
+        cursor: pointer;
+        letter-spacing: 2px;
+
+        &-text {
+            font-family: $arial;
+            font-weight: 400;
+            font-size: 13px;
+            color: $dark-3xl;
+            line-height: 15px;
+            letter-spacing: 1.5px;
+            margin-top: 10px;
+        }
+    }
+
+    &-wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+
+
+    &-burger {
+        display: none;
+    }
+
+    &-link {
+        font-family: $arial;
+        margin-left: 32px;
+        color: $dark-l;
+        line-height: 24px;
+        font-size: 15px;
+        text-decoration: none;
+        height: 100px;
+        cursor: pointer;
+        transition: color .3s ease;
+
+        &:nth-child(2) {
+            border-bottom: 3px solid $primary;
+        }
+
+        &:hover {
+            color: $primary;
+            transition: color .3s ease;
+        }
+    }
+}

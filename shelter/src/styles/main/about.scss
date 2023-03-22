@@ -15,7 +15,7 @@
     }
 
     &-text-wrapper {
-        width: 430px;
+        // width: 430px;
         margin-left: 120px;
     }
 
@@ -26,6 +26,9 @@
         line-height: 45px;
         font-weight: 400;
         margin: 0;
+        margin-top: 13px;
+        letter-spacing: 2.5px;
+        width: 363px;
     }
 
     &-text {
@@ -36,6 +39,7 @@
         font-weight: 400;
         margin: 0;
         margin-top: 25px;
+        width: 430px;
     }
 }
 

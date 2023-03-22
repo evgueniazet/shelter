@@ -6,13 +6,15 @@
   "dependencies": {
     "copy-webpack-plugin": "^11.0.0",
     "css-loader": "^6.7.3",
+    "extract-css-chunks-webpack-plugin": "^4.9.0",
     "hot-reload-server": "^0.1.1",
     "http-proxy-middleware": "^2.0.6",
-    "mini-css-extract-plugin": "^2.7.3",
+    "mini-css-extract-plugin": "^2.7.5",
     "node-sass": "^8.0.0",
     "normalize.css": "^8.0.1",
     "sass-loader": "^13.2.0",
     "style-loader": "^3.3.1",
+    "url-loader": "^4.1.1",
     "webpack-5": "^0.0.0"
   },
   "devDependencies": {
