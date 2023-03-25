@@ -1,11 +1,19 @@
 @import '../variables.scss';
 
 .home {
+    display: flex;
+    justify-content: center;
     background-image: url('../../images/background.svg');
     background-size: cover;
-    width: 100%;
     padding: 60px 40px 0 40px;
     box-sizing: border-box;
+
+
+    &-wrapper {
+        width: 1280px;
+
+    }
+
 
     &-info {
         margin-top: 60px;
@@ -35,7 +43,6 @@
 
         &-wrapper {
             display: flex;
-            // align-items: center;
         }
 
         &-text {
@@ -48,11 +55,6 @@
         background-color: $primary;
         padding: 15px 52px;
         border-radius: 100px;
-        color: $dark-3xl;
-        font-family: $georgia;
-        font-weight: 400;
-        font-size: 17px;
-        line-height: 22px;
         margin-top: 42px;
         border: none;
         transition: box-shadow .3s linear;
@@ -62,6 +64,15 @@
         &:hover {
             box-shadow: 0 0 10px $light-xl;
             transition: box-shadow .3s linear;
+        }
+
+        &-link {
+            text-decoration: none;
+            color: $dark-3xl;
+            font-family: $georgia;
+            font-weight: 400;
+            font-size: 17px;
+            line-height: 22px;
         }
     }
 
@@ -77,14 +88,18 @@
     align-items: center;
 
     &-logo {
-        font-family: $georgia;
-        font-size: 32px;
-        font-weight: 400;
-        color: $primary;
-        line-height: 35px;
-        margin: 0;
-        cursor: pointer;
-        letter-spacing: 2px;
+
+        &-title {
+            font-family: $georgia;
+            font-size: 32px;
+            font-weight: 400;
+            color: $primary;
+            line-height: 35px;
+            margin: 0;
+            cursor: pointer;
+            letter-spacing: 2px;
+        }
+
 
         &-text {
             font-family: $arial;
@@ -100,7 +115,6 @@
     &-wrapper {
         display: flex;
         flex-direction: column;
-        // width: 184px;
 
     }
 
@@ -136,7 +150,7 @@
 @media screen and (max-width: 320px) {
 
     .header {
-
+        padding: 30px 53px 30px 10px;
         justify-content: flex-start;
 
         &-nav {
@@ -145,7 +159,6 @@
 
         &-burger {
             display: block;
-            margin-left: 43px;
 
 
             &-item {
@@ -188,7 +201,4 @@
             margin-top: 105px;
         }
     }
-
-
-
 }

@@ -2,9 +2,15 @@
 
 .donation {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     padding: 80px 182px 100px 182px;
     background-color: $light-l;
+
+    &-wrapper {
+        display: flex;
+        justify-content: center;
+        width: 1280px;
+    }
 
     &-img {
         width: 506px;
@@ -93,8 +99,6 @@
                 font-size: 25px;
                 line-height: 33px;
             }
-
-            
         }
 
         &-card {

@@ -2,12 +2,24 @@
 
 .footer {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     padding: 56px 40px 0 40px;
     background-image: url('../../images/background.svg');
+    background-size: cover;
 
-    &>div {
-        width: 275px;
+    &-wrapper {
+        display: flex;
+        width: 1280px;
+    }
+
+    &-info {
+       &:not(:first-child) {
+        margin-left: 160px;
+       }
+    }
+
+    &-content {
+        display: flex;
     }
 
     &-title {
@@ -23,6 +35,7 @@
         display: flex;
         align-items: center;
         margin-top: 35px;
+        text-decoration: none;
 
         &-text {
             margin-left: 20px;
@@ -33,4 +46,60 @@
             color: $primary;
         }
     }
+
+    &-img {
+        margin-left: 160px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    .footer {
+        flex-direction: column;
+
+        &-img {
+            width: 300px;
+            margin-top: 65px;
+        }
+    }
+
+}
+
+
+@media screen and (max-width: 320px) {
+
+    .footer {
+
+        padding: 30px 10px 0px 10px;
+
+        &-content {
+            flex-direction: column;
+        }
+
+        &-contacts {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        &-adress {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-top: 40px;
+        }
+
+        &-title {
+            font-size: 25px;
+            text-align: center;
+        }
+
+        &-link {
+            margin-top: 40px;
+        }
+
+    }
+
 }

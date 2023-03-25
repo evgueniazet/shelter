@@ -35,17 +35,17 @@
         width: 52px;
         height: 52px;
         font-family: $georgia;
+        background-color: transparent;
 
         &:nth-child(1) {
             border: 2px solid $dark-s;
             color: $dark-s;
-            background-color: transparent;
         }
 
         &:nth-child(2) {
             border: 2px solid $dark-s;
             color: $dark-s;
-            background-color: transparent;
+
         }
 
         &:nth-child(3) {
@@ -57,11 +57,25 @@
         &:nth-child(4) {
             border: 2px solid $primary;
             color: $dark-3xl;
+            cursor: pointer;
+            transition: border .3s linear;
+
+            &:hover {
+                border: 2px solid rgb(233, 122, 31);
+                transition: border .3s linear;
+            }
         }
 
         &:nth-child(5) {
             border: 2px solid $primary;
             color: $dark-3xl;
+            cursor: pointer;
+            transition: border .3s linear;
+
+            &:hover {
+                border: 2px solid rgb(233, 122, 31);
+                transition: border .3s linear;
+            }
         }
     }
 }
@@ -103,6 +117,11 @@
         cursor: pointer;
         transition: border .3s linear;
 
+        &:hover {
+            border: 2px solid rgb(233, 122, 31);
+            transition: border .3s linear;
+        }
+
     }
 }
 
@@ -112,8 +131,27 @@
 
         &-container {
             grid-template-columns: repeat(2, 270px);
-
         }
     }
 
+}
+
+@media screen and (max-width: 320px) {
+
+    .cards {
+
+        padding: 42px 10px;
+
+        &-title {
+            font-size: 25px;
+            width: 300px;
+        }
+
+        &-container {
+            grid-template-columns: repeat(1, 270px);
+            height: 1365px;
+            overflow: hidden;
+            margin-top: 42px;
+        }
+    }
 }

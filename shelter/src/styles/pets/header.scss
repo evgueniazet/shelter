@@ -2,12 +2,17 @@
 
 .header {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
+    justify-content: center;
     box-sizing: border-box;
     padding: 30px 40px;
     background-color: $light-xl;
+
+    &-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 1280px;
+    }
 
 
     &-logo {
@@ -29,13 +34,11 @@
             letter-spacing: 1.5px;
             margin-top: 10px;
         }
-    }
 
-    &-wrapper {
-        display: flex;
-        flex-direction: column;
+        &-wrapper {
+            text-decoration: none;
+        }
     }
-
 
     &-burger {
         display: none;
@@ -61,4 +64,31 @@
             transition: color .3s ease;
         }
     }
+}
+
+@media screen and (max-width: 320px) {
+
+    .header {
+
+        padding: 30px 53px 30px 10px;
+
+        &-nav {
+            display: none;
+        }
+
+        &-burger {
+            display: block;
+
+
+            &-item {
+                display: block;
+                margin-top: 10px;
+                width: 30px;
+                height: 2px;
+                background-color: $black;
+            }
+        }
+    }
+
+
 }
