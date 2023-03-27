@@ -16,6 +16,7 @@
         font-size: 35px;
         line-height: 45px;
         font-weight: 400;
+        letter-spacing: 0.13rem;
     }
 
     &-container {
@@ -27,7 +28,7 @@
     }
 
     &-buttons {
-        margin-top: 45px;
+        margin-top: 60px;
     }
 
     &-button {
@@ -37,6 +38,10 @@
         font-family: $georgia;
         background-color: transparent;
 
+        &:not(:first-child) {
+            margin-left: 16px;
+        }
+
         &:nth-child(1) {
             border: 2px solid $dark-s;
             color: $dark-s;
@@ -45,7 +50,6 @@
         &:nth-child(2) {
             border: 2px solid $dark-s;
             color: $dark-s;
-
         }
 
         &:nth-child(3) {
@@ -58,11 +62,12 @@
             border: 2px solid $primary;
             color: $dark-3xl;
             cursor: pointer;
-            transition: border .3s linear;
+            transition: background-color .3s linear;
 
             &:hover {
-                border: 2px solid rgb(233, 122, 31);
-                transition: border .3s linear;
+                background-color: $primary-light;
+                border: none;
+                transition: background-color .3s linear;
             }
         }
 
@@ -70,11 +75,12 @@
             border: 2px solid $primary;
             color: $dark-3xl;
             cursor: pointer;
-            transition: border .3s linear;
+            transition: background-color .3s linear;
 
             &:hover {
-                border: 2px solid rgb(233, 122, 31);
-                transition: border .3s linear;
+                background-color: $primary-light;
+                border: none;
+                transition: background-color .3s linear;
             }
         }
     }
@@ -86,6 +92,18 @@
     flex-direction: column;
     align-items: center;
     cursor: pointer;
+    transition: all 0.5s linear;
+
+    &:hover {
+        background-color: $light-xl;
+        transition: background-color 0.5s linear;
+    }
+
+    &:hover .card-button {
+        background-color: $primary-light;
+        border: transparent;
+        transition: all 0.5s linear;
+    }
 
     &-img {
         width: 270px;
@@ -100,6 +118,7 @@
         font-weight: 400;
         line-height: 23px;
         font-size: 20px;
+        letter-spacing: 0.06rem;
     }
 
     &-button {
@@ -111,17 +130,12 @@
         background-color: transparent;
         border-radius: 100px;
         border: 2px solid $primary;
-        padding: 15px 45px;
+        padding: 13px 45px;
         width: 188px;
         margin: 30px 0;
         cursor: pointer;
         transition: border .3s linear;
-
-        &:hover {
-            border: 2px solid rgb(233, 122, 31);
-            transition: border .3s linear;
-        }
-
+        letter-spacing: 0.04rem;
     }
 }
 

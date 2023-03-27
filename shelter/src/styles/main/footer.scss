@@ -1,21 +1,27 @@
 @import '../variables.scss';
 
 .footer {
-    display: flex;
-    justify-content: center;
     padding: 56px 40px 0 40px;
     background-image: url('../../images/background.svg');
     background-size: cover;
+    height: 350px;
+    box-sizing: border-box;
 
     &-wrapper {
         display: flex;
-        width: 1280px;
+        position: relative;
     }
 
     &-info {
-       &:not(:first-child) {
-        margin-left: 160px;
-       }
+
+        &:first-child a {
+            margin-top: 42px;
+        }
+
+        &:not(:first-child) {
+            margin-left: 160px;
+            width: 302px;
+        }
     }
 
     &-content {
@@ -26,9 +32,10 @@
         margin: 0;
         color: $light-xl;
         font-size: 35px;
-        line-height: 46px;
+        line-height: 45px;
         font-weight: 400;
         font-family: $georgia;
+        letter-spacing: 0.14rem;
     }
 
     &-link {
@@ -44,11 +51,14 @@
             font-size: 20px;
             line-height: 23px;
             color: $primary;
+            letter-spacing: 0.08rem;
         }
     }
 
     &-img {
-        margin-left: 160px;
+        position: absolute;
+        right: 0;
+        bottom: -53px;
     }
 }
 
@@ -62,9 +72,7 @@
             margin-top: 65px;
         }
     }
-
 }
-
 
 @media screen and (max-width: 320px) {
 
@@ -99,7 +107,5 @@
         &-link {
             margin-top: 40px;
         }
-
     }
-
 }

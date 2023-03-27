@@ -7,14 +7,12 @@
     padding: 80px 40px 100px 40px;
     box-sizing: border-box;
 
-
     &-wrapper {
         position: relative;
         display: flex;
         flex-direction: column;
         align-items: center;
         width: 1280px;
-
     }
 
     &-title {
@@ -22,9 +20,9 @@
         width: 400px;
         font-family: $georgia;
         font-weight: 400;
-        line-height: 47px;
+        line-height: 45px;
         font-size: 35px;
-        letter-spacing: 1.5px;
+        letter-spacing: 2px;
         color: $dark-l;
         text-align: center;
     }
@@ -38,36 +36,38 @@
     &-button-left {
         position: absolute;
         left: 0;
-        bottom: 50%;
+        bottom: 44%;
         background-color: transparent;
         border-radius: 50%;
-        padding: 20px 23px;
         border: solid 2px $primary;
-        height: 60px;
+        height: 52px;
+        width: 52px;
         cursor: pointer;
-        transition: border .3s linear;
+        transition: background-color .3s linear;
 
         &:hover {
-            border: 2px solid rgb(233, 122, 31);
-            transition: border .3s linear;
+            background-color: $primary-light;
+            border: none;
+            transition: background-color .3s linear;
         }
     }
 
     &-button-right {
         position: absolute;
         right: 0;
-        bottom: 50%;
+        bottom: 44%;
         background-color: transparent;
         border-radius: 50%;
-        padding: 20px 23px;
-        height: 60px;
+        height: 52px;
+        width: 52px;
         border: solid 2px $primary;
         cursor: pointer;
-        transition: border .3s linear;
+        transition: background-color .3s linear;
 
         &:hover {
-            border: 2px solid rgb(233, 122, 31);
-            transition: border .3s linear;
+            background-color: $primary-light;
+            border: none;
+            transition: background-color .3s linear;
         }
     }
 
@@ -80,18 +80,20 @@
         margin-top: 60px;
         cursor: pointer;
         transition: box-shadow .3s linear;
+        transition: background-color 0.3s linear;
 
         &:hover {
-            box-shadow: 0 0 10px #eb700c;
-            transition: box-shadow .3s linear;
+            background-color: $primary-light;
+            transition: background-color 0.3s linear;
         }
 
         &-link {
             font-family: $georgia;
             color: $dark-3xl;
             font-size: 17px;
-            line-height: 22px;
+            line-height: 16px;
             text-decoration: none;
+            letter-spacing: 0.9px;
         }
     }
 }
@@ -108,6 +110,18 @@
     flex-direction: column;
     align-items: center;
     cursor: pointer;
+    transition: all 0.5s linear;
+
+    &:hover {
+        background-color: $light-xl;
+        transition: background-color 0.5s linear;
+    }
+
+    &:hover .card-button {
+        background-color: $primary-light;
+        border: transparent;
+        transition: all 0.5s linear;
+    }
 
     &-img {
         width: 270px;
@@ -115,36 +129,30 @@
 
     &-title {
         margin: 0;
-        margin-top: 30px;
+        margin-top: 25px;
         text-align: center;
         color: $dark-l;
         font-family: $georgia;
         font-weight: 400;
-        line-height: 23px;
+        line-height: 28px;
         font-size: 20px;
+        letter-spacing: 1.2px;
     }
 
     &-button {
         font-family: $georgia;
         font-size: 17px;
         font-weight: 400;
-        line-height: 22px;
+        line-height: 20px;
         color: $dark-3xl;
         background-color: transparent;
         border-radius: 100px;
         border: 2px solid $primary;
-        padding: 15px 45px;
-        width: 188px;
+        padding: 15px 40px;
+        letter-spacing: 1.2px;
         margin: 30px 0;
         cursor: pointer;
         transition: border .3s linear;
-
-        &:hover {
-            border: 2px solid rgb(233, 122, 31);
-            transition: border .3s linear;
-        }
-
-
     }
 }
 

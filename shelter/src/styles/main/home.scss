@@ -8,12 +8,9 @@
     padding: 60px 40px 0 40px;
     box-sizing: border-box;
 
-
     &-wrapper {
         width: 1280px;
-
     }
-
 
     &-info {
         margin-top: 60px;
@@ -48,22 +45,25 @@
         &-text {
             margin-top: 163px;
         }
-
     }
 
     &-button {
         background-color: $primary;
-        padding: 15px 52px;
+        padding: 15px 46px;
         border-radius: 100px;
         margin-top: 42px;
         border: none;
-        transition: box-shadow .3s linear;
+        font-family: $georgia;
+        font-size: 17px;
+        line-height: 22px;
+        color: $dark-3xl;
+        letter-spacing: 1.2px;
+        transition: background-color .3s linear;
         cursor: pointer;
 
-
         &:hover {
-            box-shadow: 0 0 10px $light-xl;
-            transition: box-shadow .3s linear;
+            background-color: $primary-light;
+            transition: background-color .3s linear;
         }
 
         &-link {
@@ -89,6 +89,11 @@
 
     &-logo {
 
+        &-wrapper {
+            display: block;
+            text-decoration: none;
+        }
+
         &-title {
             font-family: $georgia;
             font-size: 32px;
@@ -100,8 +105,8 @@
             letter-spacing: 2px;
         }
 
-
         &-text {
+            display: block;
             font-family: $arial;
             font-weight: 400;
             font-size: 13px;
@@ -115,9 +120,7 @@
     &-wrapper {
         display: flex;
         flex-direction: column;
-
     }
-
 
     &-burger {
         display: none;
@@ -136,16 +139,16 @@
 
         &:first-child {
             border-bottom: 3px solid $primary;
+            color: $light-s;
+            cursor: auto;
         }
 
         &:hover {
-            color: $primary;
+            color: $light-s;
             transition: color .3s ease;
         }
     }
 }
-
-
 
 @media screen and (max-width: 320px) {
 
@@ -159,7 +162,6 @@
 
         &-burger {
             display: block;
-
 
             &-item {
                 display: block;
@@ -189,7 +191,6 @@
                 width: 300px;
                 margin-top: 19px;
             }
-
         }
 
         &-button {

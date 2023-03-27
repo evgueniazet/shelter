@@ -14,25 +14,25 @@
         width: 1280px;
     }
 
-
     &-logo {
         font-family: $georgia;
         font-size: 32px;
         font-weight: 400;
         color: $dark-l;
-        line-height: 35px;
+        line-height: 41px;
         margin: 0;
         cursor: pointer;
         letter-spacing: 2px;
 
         &-text {
+            display: block;
             font-family: $arial;
             font-weight: 400;
             font-size: 13px;
             color: $dark-3xl;
             line-height: 15px;
             letter-spacing: 1.5px;
-            margin-top: 10px;
+            margin-top: 5px;
         }
 
         &-wrapper {
@@ -46,7 +46,6 @@
 
     &-link {
         font-family: $arial;
-        margin-left: 32px;
         color: $dark-l;
         line-height: 24px;
         font-size: 15px;
@@ -55,12 +54,16 @@
         cursor: pointer;
         transition: color .3s ease;
 
+        &:not(:first-child) {
+            margin-left: 31px;
+        }
+
         &:nth-child(2) {
             border-bottom: 3px solid $primary;
         }
 
         &:hover {
-            color: $primary;
+            color: $dark-3xl;
             transition: color .3s ease;
         }
     }
@@ -79,7 +82,6 @@
         &-burger {
             display: block;
 
-
             &-item {
                 display: block;
                 margin-top: 10px;
@@ -89,6 +91,4 @@
             }
         }
     }
-
-
 }
