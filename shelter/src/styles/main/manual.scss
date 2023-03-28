@@ -62,9 +62,6 @@
     }
 }
 
-
-
-
 @media screen and (max-width: 768px) {
 
     .manual {
@@ -87,29 +84,32 @@
     }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 @media screen and (max-width: 320px) {
     .manual {
 
         padding: 42px 15px;
 
-        &-elements {
-            width: 300px;
-            margin-top: 42px;
+        &-wrapper {
+            width: 320px;
         }
+
+        &-title {
+            font-size: 25px;
+            line-height: 33px;
+            width: 260px;
+            letter-spacing: 1.4px;
+        }
+
+
+        &-elements {
+            justify-content: flex-start;
+            width: 275px;
+            margin-top: 42px;
+            column-gap: 45px;
+            row-gap: 27px;
+        }
+
+
 
         &-icon {
             width: 50px;
@@ -117,6 +117,8 @@
         }
 
         &-element {
+
+            width: 115px;
 
             &-caption {
                 margin-top: 20px;
