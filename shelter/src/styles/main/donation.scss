@@ -87,10 +87,35 @@
     }
 }
 
+@media screen and (max-width: 768px) {
+    .donation {
+
+        padding: 80px 130px 100px 130px;
+
+        &-wrapper {
+            flex-direction: column;
+        }
+
+        &-info {
+            margin: 0;
+            margin-left: 65px;
+
+            &-text {
+                width: 350px;
+            }
+        }
+
+        &-img {
+            order: 1;
+            margin-top: 60px;
+        }
+    }
+}
+
 @media screen and (max-width: 320px) {
     .donation {
         padding: 42px 20px;
-        flex-direction: column;
+        // flex-direction: column;
 
         &-info {
             margin: 0;
@@ -114,7 +139,7 @@
         }
 
         &-img {
-            order: 1;
+            // order: 1;
             width: 260px;
             margin-top: 42px;
         }

@@ -156,6 +156,38 @@
     }
 }
 
+
+@media screen and (max-width: 768px) {
+
+    .cards {
+
+        padding: 80px 30px 100px 30px;
+
+        // &-wrapper {
+        //     width: 768px;
+        // }
+
+        &-container {
+            justify-content: flex-start;
+            width: 580px;
+            overflow: hidden;
+
+        }
+    }
+
+    .card {
+
+        &:not(:first-child) {
+            margin-left: 40px;
+        }
+    }
+}
+
+
+
+
+
+
 @media screen and (max-width: 320px) {
     .cards {
 
@@ -168,7 +200,7 @@
 
         &-container {
             width: 300px;
-            overflow: hidden;
+            // overflow: hidden;
             margin-top: 42px;
         }
 
