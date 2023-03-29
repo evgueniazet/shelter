@@ -2,6 +2,8 @@
 
 
 .footer {
+    display: flex;
+    justify-content: center;
     padding: 56px 40px 0 40px;
     background-image: url('../../images/background.svg');
     background-size: cover;
@@ -11,6 +13,7 @@
     &-wrapper {
         display: flex;
         position: relative;
+        width: 1280px;
     }
 
     &-info {
@@ -59,7 +62,7 @@
     &-img {
         position: absolute;
         right: 0;
-        bottom: -53px;
+        bottom: 0;
     }
 }
 
