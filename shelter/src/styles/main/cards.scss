@@ -79,21 +79,18 @@
         padding: 15px 45px;
         margin-top: 60px;
         cursor: pointer;
+        font-family: $georgia;
+        color: $dark-3xl;
+        font-size: 17px;
+        line-height: 16px;
+        text-decoration: none;
+        letter-spacing: 0.9px;
         transition: box-shadow .3s linear;
         transition: background-color 0.3s linear;
 
         &:hover {
             background-color: $primary-light;
             transition: background-color 0.3s linear;
-        }
-
-        &-link {
-            font-family: $georgia;
-            color: $dark-3xl;
-            font-size: 17px;
-            line-height: 16px;
-            text-decoration: none;
-            letter-spacing: 0.9px;
         }
     }
 }

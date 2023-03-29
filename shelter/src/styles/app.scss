@@ -7,6 +7,11 @@
 @import './main/donation.scss';
 @import './main/footer.scss';
 
+html {
+    scroll-behavior: smooth;
+
+}
+
 body {
     display: flex;
     justify-content: center;

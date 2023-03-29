@@ -5,7 +5,7 @@
     justify-content: center;
     background-image: url('../../images/background.svg');
     background-size: cover;
-    padding: 60px 40px 0 40px;
+    padding: 30px 40px 0 40px;
     box-sizing: border-box;
 
     &-wrapper {
@@ -43,7 +43,7 @@
         }
 
         &-text {
-            margin-top: 163px;
+            margin-top: 195px;
         }
     }
 
@@ -60,24 +60,18 @@
         letter-spacing: 1.2px;
         transition: background-color .3s linear;
         cursor: pointer;
+        text-decoration: none;
+        font-weight: 400;
 
         &:hover {
             background-color: $primary-light;
             transition: background-color .3s linear;
         }
-
-        &-link {
-            text-decoration: none;
-            color: $dark-3xl;
-            font-family: $georgia;
-            font-weight: 400;
-            font-size: 17px;
-            line-height: 22px;
-        }
     }
 
     &-img {
         width: 700px;
+        margin-top: 28px;
     }
 }
 
@@ -86,6 +80,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    // scroll-behavior: smooth;
+
 
     &-logo {
 
