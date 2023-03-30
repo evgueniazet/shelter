@@ -80,8 +80,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    // scroll-behavior: smooth;
-
 
     &-logo {
 
@@ -132,6 +130,12 @@
         height: 100px;
         cursor: pointer;
         transition: color .3s ease;
+
+        &:active {
+            border-bottom: 3px solid $primary;
+            color: $light-s;
+            cursor: auto;
+        }
 
         &:first-child {
             border-bottom: 3px solid $primary;
