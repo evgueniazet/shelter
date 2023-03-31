@@ -180,3 +180,70 @@
         }
     }
 }
+
+@media screen and (max-width: 320px) {
+
+    .header {
+
+        justify-content: flex-start;
+
+        &-nav {
+            display: none;
+        }
+
+        &-burger {
+            display: block;
+            margin-left: 41px;
+
+            &-item {
+                display: block;
+                margin-top: 8px;
+                width: 30px;
+                height: 0.12em;
+                background-color: $primary;
+            }
+        }
+    }
+
+    .home {
+
+        padding: 30px 10px 0 10px;
+
+        &-info {
+
+            &-text {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+
+            &-title {
+                font-size: 25px;
+                line-height: 33px;
+                text-align: center;
+                width: 230px;
+                letter-spacing: 0.09rem;
+            }
+
+            &-description {
+                width: 300px;
+                margin-top: 40px;
+                text-align: center;
+            }
+        }
+
+        &-button {
+            margin-top: 43px;
+            margin-left: 1px;
+        }
+
+        &-img {
+            width: 260px;
+            margin: 0;
+            margin-top: 105px;
+            margin-left: 37px;
+        }
+    }
+
+}

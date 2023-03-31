@@ -174,3 +174,44 @@
         }
     }
 }
+
+@media screen and (max-width: 320px) {
+    .cards {
+
+        padding: 42px 10px;
+
+        &-title {
+            font-size: 25px;
+            line-height: 33px;
+            letter-spacing: 0.09rem;
+        }
+
+        &-container {
+            width: 270px;
+            margin-top: 42px;
+        }
+
+        &-button {
+
+            margin-top: 94px;
+
+            &-left {
+                left: 19%;
+                bottom: 13%;
+            }
+
+            &-right {
+                right: 19%;
+                bottom: 13%;
+            }
+        }
+    }
+
+    .card {
+        &-button {
+            margin: 0;
+            margin-top: 30px;
+            margin-bottom: 50px;
+        }
+    }
+}
