@@ -61,3 +61,25 @@
         height: 60px;
     }
 }
+
+@media screen and (max-width: 768px) {
+
+    .manual {
+
+        padding: 80px 70px 100px 70px;
+
+        &-wrapper {
+            width: 768px;
+        }
+
+        &-elements {
+            width: 630px;
+            row-gap: 55px;
+            column-gap: 60px;
+        }
+
+        &-element {
+            width: 170px;
+        }
+    }
+}

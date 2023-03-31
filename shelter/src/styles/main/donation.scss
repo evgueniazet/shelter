@@ -86,3 +86,28 @@
         }
     }
 }
+
+@media screen and (max-width: 768px) {
+    .donation {
+
+        padding: 80px 130px 100px 130px;
+
+        &-wrapper {
+            flex-direction: column;
+        }
+
+        &-info {
+            margin: 0;
+            margin-left: 65px;
+
+            &-text {
+                width: 350px;
+            }
+        }
+
+        &-img {
+            order: 1;
+            margin-top: 60px;
+        }
+    }
+}

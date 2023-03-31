@@ -41,3 +41,34 @@
         width: 430px;
     }
 }
+
+@media screen and (max-width: 768px) {
+
+    .about {
+
+        padding: 80px 165px 100px 165px;
+
+        &-wrapper {
+            flex-direction: column;
+        }
+
+        &-text-wrapper {
+            margin: 0;
+        }
+
+        &-title {
+            margin: 0;
+            margin-left: 3px;
+        }
+
+        &-text {
+            margin-left: 3px;
+        }
+
+        &-img {
+            order: 1;
+            margin-top: 80px;
+            margin-left: 70px;
+        }
+    }
+}

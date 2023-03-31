@@ -152,3 +152,25 @@
         transition: border .3s linear;
     }
 }
+
+@media screen and (max-width: 768px) {
+
+    .cards {
+
+        padding: 80px 30px 100px 30px;
+
+        &-container {
+            justify-content: flex-start;
+            width: 580px;
+            overflow: hidden;
+
+        }
+    }
+
+    .card {
+
+        &:not(:first-child) {
+            margin-left: 40px;
+        }
+    }
+}
