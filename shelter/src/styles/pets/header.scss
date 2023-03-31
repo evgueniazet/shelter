@@ -3,6 +3,7 @@
 .header {
     display: flex;
     justify-content: center;
+    align-items: center;
     box-sizing: border-box;
     padding: 30px 40px;
     background-color: $light-xl;
@@ -54,42 +55,24 @@
         cursor: pointer;
         transition: color .3s ease;
 
+        &:active {
+            border-bottom: 3px solid $primary;
+            color: $dark-3xl;
+        }
+
         &:not(:first-child) {
             margin-left: 31px;
         }
 
         &:nth-child(2) {
             border-bottom: 3px solid $primary;
+            color: $dark-3xl;
             cursor: auto;
         }
 
         &:hover {
             color: $dark-3xl;
             transition: color .3s ease;
-        }
-    }
-}
-
-@media screen and (max-width: 320px) {
-
-    .header {
-
-        padding: 30px 53px 30px 10px;
-
-        &-nav {
-            display: none;
-        }
-
-        &-burger {
-            display: block;
-
-            &-item {
-                display: block;
-                margin-top: 10px;
-                width: 30px;
-                height: 2px;
-                background-color: $black;
-            }
         }
     }
 }

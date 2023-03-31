@@ -138,34 +138,3 @@
         letter-spacing: 0.04rem;
     }
 }
-
-@media screen and (max-width: 768px) {
-
-    .cards {
-
-        &-container {
-            grid-template-columns: repeat(2, 270px);
-        }
-    }
-
-}
-
-@media screen and (max-width: 320px) {
-
-    .cards {
-
-        padding: 42px 10px;
-
-        &-title {
-            font-size: 25px;
-            width: 300px;
-        }
-
-        &-container {
-            grid-template-columns: repeat(1, 270px);
-            height: 1365px;
-            overflow: hidden;
-            margin-top: 42px;
-        }
-    }
-}
