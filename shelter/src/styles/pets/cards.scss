@@ -1,4 +1,5 @@
 @import '../variables.scss';
+@import '../mixins.scss';
 
 .cards {
     display: flex;
@@ -6,6 +7,14 @@
     align-items: center;
     padding: 80px 40px 100px 40px;
     background-color: $light-l;
+
+    @include tablet {
+        padding: 80px 40px 75px 40px;
+    }
+
+    @include mobile {
+        padding: 42px 10px;
+    }
 
     &-title {
         width: 400px;
@@ -17,6 +26,13 @@
         line-height: 45px;
         font-weight: 400;
         letter-spacing: 0.13rem;
+
+        @include mobile {
+            font-size: 25px;
+            width: 300px;
+            letter-spacing: 0.1rem;
+            line-height: 32px;
+        }
     }
 
     &-container {
@@ -25,10 +41,26 @@
         row-gap: 30px;
         column-gap: 40px;
         margin-top: 60px;
+
+        @include tablet {
+            grid-template-columns: repeat(3, 270px);
+            margin-top: 30px;
+            height: 1365px;
+            overflow: hidden;
+        }
+
+        @include mobile {
+            grid-template-columns: repeat(1, 270px);
+            margin-top: 42px;
+        }
     }
 
     &-buttons {
         margin-top: 60px;
+
+        @include tablet {
+            margin-top: 40px;
+        }
     }
 
     &-button {
@@ -40,6 +72,10 @@
 
         &:not(:first-child) {
             margin-left: 16px;
+
+            @include mobile {
+                margin-left: 6px;
+            }
         }
 
         &:nth-child(1) {
@@ -136,33 +172,5 @@
         cursor: pointer;
         transition: border .3s linear;
         letter-spacing: 0.04rem;
-    }
-}
-
-@media (min-width: 950px) and (max-width: 1279px) {
-    .cards {
-
-        padding: 80px 40px 75px 40px;
-
-        &-container {
-            grid-template-columns: repeat(3, 270px);
-            margin-top: 30px;
-            height: 1365px;
-            overflow: hidden;
-        }
-
-        &-buttons {
-            margin-top: 40px;
-        }
-    }
-}
-
-@media (min-width: 768px) and (max-width: 949px) {
-    .cards {
-
-        &-container {
-            grid-template-columns: repeat(2, 270px);
-        }
-
     }
 }

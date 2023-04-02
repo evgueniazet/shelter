@@ -1,4 +1,5 @@
 @import '../variables.scss';
+@import '../mixins.scss';
 
 .header {
     display: flex;
@@ -8,11 +9,20 @@
     padding: 30px 40px;
     background-color: $light-xl;
 
+    @include tablet {
+        padding: 30px;
+    }
+
+    @include mobile {
+        padding: 30px 20px;
+    }
+
     &-wrapper {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        width: 1280px;
+        max-width: 1280px;
+        width: 100%;
     }
 
     &-logo {
@@ -41,8 +51,28 @@
         }
     }
 
+    &-nav {
+        @include mobile {
+            display: none;
+        }
+    }
+
     &-burger {
         display: none;
+
+        @include mobile {
+            display: block;
+        }
+
+        &-item {
+            @include mobile {
+                display: block;
+                margin-top: 10px;
+                width: 30px;
+                height: 2px;
+                background-color: $black;
+            }
+        }
     }
 
     &-link {
@@ -76,3 +106,4 @@
         }
     }
 }
+

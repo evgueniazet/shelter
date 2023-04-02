@@ -1,4 +1,5 @@
 @import '../variables.scss';
+@import '../mixins.scss';
 
 .home {
     display: flex;
@@ -8,14 +9,29 @@
     padding: 30px 40px 0 40px;
     box-sizing: border-box;
 
+    @include tablet {
+        padding: 30px 30px 0 30px;
+    }
+
+    @include mobile {
+        padding: 30px 20px 0 20px;
+    }
+
     &-wrapper {
-        width: 1280px;
+        max-width: 1280px;
+        width: 100%;
     }
 
     &-info {
-        margin-top: 60px;
         display: flex;
         justify-content: space-between;
+        margin-top: 60px;
+
+        @include tablet {
+            flex-direction: column;
+            align-items: center;
+            margin-top: 40px;
+        }
 
         &-title {
             color: $light-xl;
@@ -25,6 +41,18 @@
             line-height: 57px;
             width: 310px;
             margin: 0;
+
+            @include tablet {
+                margin-top: 21px;
+            }
+
+            @include mobile {
+                font-size: 25px;
+                line-height: 33px;
+                text-align: center;
+                width: 230px;
+                letter-spacing: 0.09rem;
+            }
         }
 
         &-description {
@@ -36,6 +64,12 @@
             width: 460px;
             margin: 0;
             margin-top: 42px;
+
+            @include mobile {
+                width: 300px;
+                margin-top: 40px;
+                text-align: center;
+            }
         }
 
         &-wrapper {
@@ -44,6 +78,17 @@
 
         &-text {
             margin-top: 195px;
+
+            @include tablet {
+                margin-top: 0;
+            }
+
+            @include mobile {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
         }
     }
 
@@ -67,11 +112,33 @@
             background-color: $primary-light;
             transition: background-color .3s linear;
         }
+
+        @include tablet {
+            margin-left: 126px;
+        }
+
+        @include mobile {
+            margin-top: 43px;
+            margin-left: 1px;
+        }
     }
 
     &-img {
         width: 700px;
         margin-top: 28px;
+
+        @include tablet {
+            width: 570px;
+            margin-top: 100px;
+            margin-left: 140px;
+        }
+
+        @include mobile {
+            width: 260px;
+            margin: 0;
+            margin-top: 105px;
+            margin-left: 37px;
+        }
     }
 }
 
@@ -80,6 +147,11 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @include mobile {
+        justify-content: flex-start;
+    }
+
 
     &-logo {
 
@@ -97,17 +169,25 @@
             margin: 0;
             cursor: pointer;
             letter-spacing: 2px;
-        }
 
-        &-text {
-            display: block;
-            font-family: $arial;
-            font-weight: 400;
-            font-size: 13px;
-            color: $light-xl;
-            line-height: 15px;
-            letter-spacing: 1.5px;
-            margin-top: 10px;
+            @include mobile {
+                margin-left: 8px;
+            }
+        }
+    }
+
+    &-text {
+        display: block;
+        font-family: $arial;
+        font-weight: 400;
+        font-size: 13px;
+        color: $light-xl;
+        line-height: 15px;
+        letter-spacing: 1.5px;
+        margin-top: 10px;
+
+        @include mobile {
+            margin-left: 12px;
         }
     }
 
@@ -116,8 +196,31 @@
         flex-direction: column;
     }
 
+    &-nav {
+        @include mobile {
+            display: none;
+        }
+    }
+
     &-burger {
         display: none;
+
+        @include mobile {
+            display: block;
+            margin-left: 66px;
+        }
+
+        &-item {
+
+            @include mobile {
+                display: block;
+                margin-top: 8px;
+                width: 30px;
+                height: 0.12em;
+                background-color: $primary;
+            }
+
+        }
     }
 
     &-link {
@@ -148,102 +251,4 @@
             transition: color .3s ease;
         }
     }
-}
-
-@media screen and (max-width: 768px) {
-
-    .home {
-        padding: 30px 30px 0 30px;
-
-        &-info {
-            flex-direction: column;
-            align-items: center;
-            margin-top: 40px;
-
-            &-text {
-                margin-top: 0;
-            }
-
-            &-title {
-                margin-top: 21px;
-            }
-        }
-
-        &-button {
-            margin-left: 126px;
-        }
-
-        &-img {
-            width: 570px;
-            margin-top: 100px;
-            margin-left: 140px;
-        }
-    }
-}
-
-@media screen and (max-width: 320px) {
-
-    .header {
-
-        justify-content: flex-start;
-
-        &-nav {
-            display: none;
-        }
-
-        &-burger {
-            display: block;
-            margin-left: 41px;
-
-            &-item {
-                display: block;
-                margin-top: 8px;
-                width: 30px;
-                height: 0.12em;
-                background-color: $primary;
-            }
-        }
-    }
-
-    .home {
-
-        padding: 30px 10px 0 10px;
-
-        &-info {
-
-            &-text {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-            }
-
-            &-title {
-                font-size: 25px;
-                line-height: 33px;
-                text-align: center;
-                width: 230px;
-                letter-spacing: 0.09rem;
-            }
-
-            &-description {
-                width: 300px;
-                margin-top: 40px;
-                text-align: center;
-            }
-        }
-
-        &-button {
-            margin-top: 43px;
-            margin-left: 1px;
-        }
-
-        &-img {
-            width: 260px;
-            margin: 0;
-            margin-top: 105px;
-            margin-left: 37px;
-        }
-    }
-
 }
