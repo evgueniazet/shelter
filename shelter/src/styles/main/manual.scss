@@ -9,7 +9,7 @@
     justify-content: center;
 
     @include tablet {
-        padding: 80px 70px 100px 70px;
+        padding: 80px 68px 100px;
     }
 
     @include mobile {
@@ -22,25 +22,26 @@
         align-items: center;
         max-width: 1280px;
         width: 100%;
+
+
     }
 
     &-title {
         color: $dark-l;
         font-family: $georgia;
-        line-height: 46px;
+        line-height: 43px;
         font-size: 35px;
         font-weight: 400;
         margin: 0;
         width: 310px;
         text-align: center;
-        letter-spacing: 1.9px;
+        letter-spacing: 2px;
 
         @include mobile {
             font-size: 25px;
-            line-height: 33px;
+            line-height: 32px;
             width: 260px;
             letter-spacing: 1.4px;
-            margin-top: 5px;
         }
     }
 
@@ -51,27 +52,20 @@
         flex-wrap: wrap;
         row-gap: 57px;
         column-gap: 119px;
-        margin-top: 60px;
-        width: 100%;
-        max-width: 1080px;
-
-
+        margin-top: 65px;
 
         @include tablet {
-            row-gap: 55px;
+            justify-content: center;
+            row-gap: 59px;
             column-gap: 60px;
-            max-width: 609px;
-            width: 100%;
+            margin-top: 64px;
         }
 
         @include mobile {
-            display: grid;
-            grid-template-columns: repeat(2, 130px);
-            align-items: start;
-            width: 283px;
-            margin-top: 40px;
+            justify-content: start;
+            margin-top: 41px;
             row-gap: 27px;
-            column-gap: 28px;
+            column-gap: 34px;
         }
     }
 
@@ -82,21 +76,30 @@
         align-items: center;
         justify-content: center;
 
+
+        @include tablet {
+            width: 26.8%;
+        }
+
+        @include mobile {
+            width: 43.8%;
+        }
+
         &-caption {
             margin: 0;
-            margin-top: 30px;
+            margin-top: 29px;
             text-align: center;
             color: $dark-l;
             font-family: $georgia;
             font-weight: 400;
-            line-height: 21px;
+            line-height: 20px;
             font-size: 20px;
             letter-spacing: 1.2px;
 
             @include mobile {
                 margin-top: 20px;
                 font-size: 15px;
-                line-height: px;
+                letter-spacing: 0.8px;
             }
         }
     }

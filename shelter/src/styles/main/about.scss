@@ -3,11 +3,11 @@
 
 .about {
     background-color: $light-xl;
-    padding: 80px 40px 100px 40px;
+    padding: 80px 40px 100px;
     box-sizing: border-box;
 
     @include tablet {
-        padding: 80px 165px 100px 165px;
+        padding: 80px 158px 100px;
     }
 
     @include mobile {
@@ -17,6 +17,7 @@
     &-wrapper {
         display: flex;
         justify-content: center;
+        align-items: center;
 
         @include tablet {
             flex-direction: column;
@@ -29,13 +30,12 @@
 
         @include tablet {
             order: 1;
-            margin-top: 80px;
-            margin-left: 3px;
+            margin-top: 79px;
         }
 
         @include mobile {
             margin: 0;
-            margin-top: 38px;
+            margin-top: 41px;
             margin-left: 2px;
             width: 260px;
         }
@@ -43,9 +43,11 @@
 
     &-text-wrapper {
         margin-left: 120px;
+        width: 36%;
 
         @include tablet {
             margin: 0;
+            width: 95%;
         }
 
         @include mobile {
@@ -53,7 +55,7 @@
             flex-direction: column;
             align-items: center;
             margin: 0;
-            width: 100%;
+            width: 90%;
         }
     }
 
@@ -61,16 +63,15 @@
         font-family: $georgia;
         color: $dark-l;
         font-size: 35px;
-        line-height: 45px;
+        line-height: 46px;
         font-weight: 400;
         margin: 0;
-        margin-top: 13px;
-        letter-spacing: 2.5px;
+        margin-top: 7px;
+        letter-spacing: 2.2px;
         width: 363px;
 
         @include tablet {
             margin: 0;
-            margin-left: 3px;
         }
 
         @include mobile {
@@ -90,17 +91,11 @@
         font-size: 15px;
         font-weight: 400;
         margin: 0;
-        margin-top: 26px;
-        width: 430px;
-
-        @include tablet {
-            margin-left: 3px;
-        }
+        margin-top: 24px;
 
         @include mobile {
-            width: 264px;
             text-align: justify;
-            margin-top: 23px;
+            margin-top: 24px;
         }
     }
 }
