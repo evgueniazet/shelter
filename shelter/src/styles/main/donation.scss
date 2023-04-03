@@ -8,7 +8,7 @@
     background-color: #F6F6F6;
 
     @include tablet {
-        padding: 80px 130px 100px 130px;
+        padding: 91px 190px 100px 130px;
     }
 
     @include mobile {
@@ -23,6 +23,7 @@
 
         @include tablet {
             flex-direction: column;
+            align-items: center;
         }
     }
 
@@ -32,12 +33,13 @@
         @include tablet {
             order: 1;
             margin-top: 60px;
+            margin-left: 61px;
         }
 
         @include mobile {
             width: 260px;
             margin-top: 42px;
-            margin-left: 20px;
+            margin-left: 2px;
         }
     }
 
@@ -45,8 +47,6 @@
         margin-left: 30px;
 
         @include tablet {
-            margin: 0;
-            margin-left: 65px;
         }
 
         @include mobile {
@@ -60,7 +60,7 @@
         &-title {
             font-family: $georgia;
             font-size: 35px;
-            line-height: 46px;
+            line-height: 44px;
             font-weight: 400;
             color: $dark-l;
             width: 300px;
@@ -71,6 +71,7 @@
                 font-size: 25px;
                 line-height: 29px;
                 letter-spacing: 1.4px;
+                width: 210px;
             }
         }
 
@@ -108,7 +109,7 @@
 
         @include mobile {
             width: 280px;
-            margin-top: 25px;
+            margin-top: 19px;
         }
 
         &:hover {
@@ -129,7 +130,7 @@
             margin: 0;
             margin-left: 15px;
             text-decoration: none;
-            letter-spacing: 1.2px;
+            letter-spacing: 0.075rem;
 
             @include mobile {
                 font-size: 15px;
@@ -143,12 +144,12 @@
             color: $dark-l;
             font-weight: 400;
             font-size: 15px;
-            line-height: 17px;
+            line-height: 14px;
             margin-top: 20px;
-            letter-spacing: 0.9px;
+            letter-spacing: 0.96px;
 
             @include mobile {
-                line-height: 21px;
+                line-height: 29px;
                 letter-spacing: 0rem;
             }
         }

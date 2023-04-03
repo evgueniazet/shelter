@@ -148,11 +148,6 @@
     justify-content: space-between;
     align-items: center;
 
-    @include mobile {
-        justify-content: flex-start;
-    }
-
-
     &-logo {
 
         &-wrapper {
@@ -168,26 +163,26 @@
             line-height: 35px;
             margin: 0;
             cursor: pointer;
-            letter-spacing: 2px;
+            letter-spacing: 0.12rem;
 
             @include mobile {
-                margin-left: 8px;
+                letter-spacing: 0.1rem;
             }
         }
-    }
 
-    &-text {
-        display: block;
-        font-family: $arial;
-        font-weight: 400;
-        font-size: 13px;
-        color: $light-xl;
-        line-height: 15px;
-        letter-spacing: 1.5px;
-        margin-top: 10px;
+        &-text {
+            display: block;
+            font-family: $arial;
+            font-weight: 400;
+            font-size: 13px;
+            color: $light-xl;
+            line-height: 15px;
+            letter-spacing: 1.5px;
+            margin-top: 10px;
 
-        @include mobile {
-            margin-left: 12px;
+            @include mobile {
+                letter-spacing: 0.09rem
+            }
         }
     }
 
@@ -208,6 +203,7 @@
         @include mobile {
             display: block;
             margin-left: 66px;
+            margin-top: -8px;
         }
 
         &-item {
@@ -227,10 +223,8 @@
         font-family: $arial;
         margin-left: 32px;
         color: $dark-s;
-        line-height: 24px;
         font-size: 15px;
         text-decoration: none;
-        height: 100px;
         cursor: pointer;
         transition: color .3s ease;
 

@@ -1,7 +1,6 @@
 @import '../variables.scss';
 @import '../mixins.scss';
 
-
 .cards {
     display: flex;
     justify-content: center;
@@ -47,17 +46,14 @@
         display: flex;
         justify-content: center;
         margin-top: 60px;
+        overflow: hidden;
 
         @include tablet {
             justify-content: flex-start;
-            width: 580px;
-            overflow: hidden;
         }
 
         @include mobile {
-            width: 270px;
             margin-top: 42px;
-
         }
     }
 
@@ -138,9 +134,17 @@
 }
 
 .container {
-    width: 990px;
+    width: 988px;
     display: flex;
     justify-content: space-between;
+
+    @include tablet {
+        width: 75vw;
+    }
+
+    @include mobile {
+        width: 83vw;
+    }
 }
 
 .card {
@@ -152,6 +156,8 @@
     transition: all 0.5s linear;
 
     &:not(:first-child) {
+
+        margin-left: 90px;
 
         @include tablet {
             margin-left: 40px;
@@ -175,7 +181,7 @@
 
     &-title {
         margin: 0;
-        margin-top: 25px;
+        margin-top: 29px;
         text-align: center;
         color: $dark-l;
         font-family: $georgia;
@@ -202,7 +208,7 @@
 
         @include mobile {
             margin: 0;
-            margin-top: 30px;
+            margin-top: 27px;
             margin-bottom: 50px;
         }
     }

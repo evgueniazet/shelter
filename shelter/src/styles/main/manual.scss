@@ -2,7 +2,7 @@
 @import '../mixins.scss';
 
 .manual {
-    padding: 80px 128px 100px 128px;
+    padding: 80px 100px 100px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -22,14 +22,6 @@
         align-items: center;
         max-width: 1280px;
         width: 100%;
-
-        @include tablet {
-            width: 768px;
-        }
-
-        @include mobile {
-            width: 320px;
-        }
     }
 
     &-title {
@@ -48,24 +40,38 @@
             line-height: 33px;
             width: 260px;
             letter-spacing: 1.4px;
+            margin-top: 5px;
         }
     }
 
     &-elements {
         display: flex;
+        align-items: center;
         justify-content: center;
         flex-wrap: wrap;
-        row-gap: 56px;
+        row-gap: 57px;
+        column-gap: 119px;
         margin-top: 60px;
+        width: 100%;
+        max-width: 1080px;
+
+
 
         @include tablet {
             row-gap: 55px;
+            column-gap: 60px;
+            max-width: 609px;
+            width: 100%;
         }
 
         @include mobile {
-            justify-content: flex-start;
-            margin-top: 42px;
+            display: grid;
+            grid-template-columns: repeat(2, 130px);
+            align-items: start;
+            width: 283px;
+            margin-top: 40px;
             row-gap: 27px;
+            column-gap: 28px;
         }
     }
 
@@ -75,7 +81,6 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        width: 209px;
 
         &-caption {
             margin: 0;
@@ -86,12 +91,12 @@
             font-weight: 400;
             line-height: 21px;
             font-size: 20px;
-            letter-spacing: 0.8px;
+            letter-spacing: 1.2px;
 
             @include mobile {
                 margin-top: 20px;
                 font-size: 15px;
-                line-height: 17px;
+                line-height: px;
             }
         }
     }

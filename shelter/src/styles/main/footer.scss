@@ -7,34 +7,45 @@
     padding: 56px 40px 0 40px;
     background-image: url('../../images/background.svg');
     background-size: cover;
-    height: 350px;
     box-sizing: border-box;
 
     @include tablet {
         padding: 30px 64px 0 64px;
-        height: 640px;
     }
 
     @include mobile {
         padding: 30px 10px 0px 10px;
-        height: 810px;
     }
 
     &-wrapper {
         display: flex;
-        position: relative;
         max-width: 1280px;
         width: 100%;
 
         @include tablet {
+            flex-direction: column;
             justify-content: center;
-            align-items: flex-start;
+            align-items: center;
+        }
+
+        @include mobile {
+            align-items: center;
+            justify-content: flex-start;
+        }
+    }
+
+    &-info-wrapper {
+
+        display: flex;
+
+        @include tablet {
+            display: flex;
         }
 
         @include mobile {
             flex-direction: column;
             align-items: center;
-            justify-content: flex-start;
+            justify-content: center;
         }
     }
 
@@ -44,13 +55,14 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            justify-content: center;
         }
 
         &:first-child .footer-link {
             margin-top: 42px;
 
             @include mobile {
-                margin-top: 40px;
+                margin-top: 42px;
             }
         }
 
@@ -65,16 +77,24 @@
 
             @include mobile {
                 margin: 0;
-                margin-top: 46px;
+                margin-top: 42px;
             }
         }
 
         &:nth-child(1) {
             width: 282px;
+
+            @include mobile {
+                width: 278px;
+            }
         }
 
         &:nth-child(2) {
             width: 302px;
+
+            @include mobile {
+                width: 300px;
+            }
         }
     }
 
@@ -86,7 +106,7 @@
         margin: 0;
         color: $light-xl;
         font-size: 35px;
-        line-height: 45px;
+        line-height: 46px;
         font-weight: 400;
         font-family: $georgia;
         letter-spacing: 0.14rem;
@@ -95,6 +115,11 @@
             font-size: 25px;
             text-align: center;
             line-height: 32px;
+            letter-spacing: 0.1rem;
+        }
+
+        &:first-child {
+            width: 286px;
         }
     }
 
@@ -121,21 +146,19 @@
     }
 
     &-img {
-        position: absolute;
-        right: 0;
-        bottom: 0;
+        margin-left: 155px;
+        margin-top: -15px;
 
         @include tablet {
             width: 300px;
-            margin-top: 65px;
-            right: 26%;
-            bottom: 0;
+            margin-left: 171px;
+            margin-top: 61px;
         }
 
         @include mobile {
             width: 260px;
-            margin-top: 65px;
-            right: 7%;
+            margin-left: 2px;
+            margin-top: 41px;
         }
     }
 }
