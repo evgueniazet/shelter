@@ -1,5 +1,5 @@
 @import '../variables.scss';
-
+@import '../mixins.scss';
 
 .cards {
     display: flex;
@@ -8,39 +8,63 @@
     padding: 80px 40px 100px 40px;
     box-sizing: border-box;
 
+    @include tablet {
+        padding: 80px 30px 100px 30px;
+    }
+
+    @include mobile {
+        padding: 42px 10px;
+    }
+
     &-wrapper {
         position: relative;
         display: flex;
         flex-direction: column;
         align-items: center;
-        width: 1280px;
+        max-width: 1280px;
+        width: 100%;
     }
 
     &-title {
         margin: 0 auto;
         font-family: $georgia;
         font-weight: 400;
-        line-height: 45px;
+        line-height: 47px;
         font-size: 35px;
-        letter-spacing: 2px;
+        letter-spacing: 2.2px;
         color: $dark-l;
         text-align: center;
+
+        @include mobile {
+            font-size: 25px;
+            line-height: 33px;
+            letter-spacing: 0.09rem;
+        }
     }
 
     &-container {
         display: flex;
         justify-content: center;
         margin-top: 60px;
+        overflow: hidden;
+
+        @include tablet {
+            justify-content: flex-start;
+        }
+
+        @include mobile {
+            margin-top: 42px;
+        }
     }
 
     &-button-left {
         position: absolute;
         left: 0;
-        bottom: 44%;
+        bottom: 43.8%;
         background-color: transparent;
         border-radius: 50%;
         border: solid 2px $primary;
-        height: 52px;
+        height: 51px;
         width: 52px;
         cursor: pointer;
         transition: background-color .3s linear;
@@ -50,15 +74,20 @@
             border: none;
             transition: background-color .3s linear;
         }
+
+        @include mobile {
+            left: 19%;
+            bottom: 13.5%;
+        }
     }
 
     &-button-right {
         position: absolute;
         right: 0;
-        bottom: 44%;
+        bottom: 43.8%;
         background-color: transparent;
         border-radius: 50%;
-        height: 52px;
+        height: 51px;
         width: 52px;
         border: solid 2px $primary;
         cursor: pointer;
@@ -68,6 +97,11 @@
             background-color: $primary-light;
             border: none;
             transition: background-color .3s linear;
+        }
+
+        @include mobile {
+            right: 19%;
+            bottom: 13.5%;
         }
     }
 
@@ -76,8 +110,8 @@
         background-color: $primary;
         border-radius: 100px;
         border: none;
-        padding: 15px 45px;
-        margin-top: 60px;
+        padding: 18px 45px;
+        margin-top: 65px;
         cursor: pointer;
         font-family: $georgia;
         color: $dark-3xl;
@@ -92,13 +126,25 @@
             background-color: $primary-light;
             transition: background-color 0.3s linear;
         }
+
+        @include mobile {
+            margin-top: 116px;
+        }
     }
 }
 
 .container {
-    width: 990px;
+    width: 988px;
     display: flex;
     justify-content: space-between;
+
+    @include tablet {
+        width: 75vw;
+    }
+
+    @include mobile {
+        width: 83vw;
+    }
 }
 
 .card {
@@ -108,6 +154,15 @@
     align-items: center;
     cursor: pointer;
     transition: all 0.5s linear;
+
+    &:not(:first-child) {
+
+        margin-left: 90px;
+
+        @include tablet {
+            margin-left: 40px;
+        }
+    }
 
     &:hover {
         background-color: $light-xl;
@@ -122,6 +177,10 @@
 
     &-img {
         width: 270px;
+
+        @include mobile {
+            width: 263px;
+        }
     }
 
     &-title {
@@ -131,24 +190,34 @@
         color: $dark-l;
         font-family: $georgia;
         font-weight: 400;
-        line-height: 28px;
+        line-height: 30px;
         font-size: 20px;
-        letter-spacing: 1.2px;
+        letter-spacing: 1.3px;
+
+        @include mobile {
+            margin-top: 30px;
+        }
     }
 
     &-button {
         font-family: $georgia;
         font-size: 17px;
         font-weight: 400;
-        line-height: 20px;
+        line-height: 16px;
         color: $dark-3xl;
         background-color: transparent;
         border-radius: 100px;
         border: 2px solid $primary;
-        padding: 15px 40px;
-        letter-spacing: 1.2px;
-        margin: 30px 0;
+        padding: 15px 42px;
+        letter-spacing: 1.1px;
+        margin: 27px 0;
         cursor: pointer;
         transition: border .3s linear;
+
+        @include mobile {
+            margin: 0;
+            margin-top: 27px;
+            margin-bottom: 30px;
+        }
     }
 }

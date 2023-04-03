@@ -1,33 +1,82 @@
 @import '../variables.scss';
+@import '../mixins.scss';
 
 .donation {
     display: flex;
     justify-content: center;
-    padding: 85px 182px 101px 182px;
+    padding: 82px 182px 101px 182px;
     background-color: #F6F6F6;
+
+    @include tablet {
+        padding: 82px 190px 100px 130px;
+    }
+
+    @include mobile {
+        padding: 42px 20px;
+    }
 
     &-wrapper {
         display: flex;
         justify-content: center;
-        width: 1280px;
+        max-width: 1280px;
+        width: 100%;
+
+        @include tablet {
+            flex-direction: column;
+            align-items: center;
+        }
     }
 
     &-img {
         width: 506px;
+
+        @include tablet {
+            order: 1;
+            margin-top: 60px;
+            margin-left: 61px;
+        }
+
+        @include mobile {
+            width: 260px;
+            margin-top: 42px;
+            margin-left: 2px;
+        }
     }
 
     &-info {
         margin-left: 30px;
 
+        @include tablet {
+            width: 80%;
+            margin-left: 36px;
+        }
+
+        @include mobile {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            max-width: 400px;
+            align-items: center;
+            text-align: center;
+            margin: 0;
+        }
+
         &-title {
             font-family: $georgia;
             font-size: 35px;
-            line-height: 46px;
+            line-height: 45px;
             font-weight: 400;
             color: $dark-l;
             width: 300px;
             margin: 0;
             letter-spacing: 2.2px;
+
+            @include mobile {
+                font-size: 25px;
+                line-height: 31px;
+                letter-spacing: 1.4px;
+                width: 210px;
+            }
         }
 
         &-text {
@@ -39,6 +88,11 @@
             font-weight: 400;
             font-size: 12px;
             line-height: 18px;
+
+            @include mobile {
+                text-align: justify;
+                margin-top: 18px;
+            }
         }
     }
 
@@ -52,6 +106,11 @@
         margin-top: 20px;
         cursor: pointer;
         transition: background-color .3s linear;
+
+        @include mobile {
+            width: 280px;
+            margin-top: 19px;
+        }
 
         &:hover {
             background-color: $primary-light;
@@ -71,7 +130,12 @@
             margin: 0;
             margin-left: 15px;
             text-decoration: none;
-            letter-spacing: 1.2px;
+            letter-spacing: 0.075rem;
+
+            @include mobile {
+                font-size: 15px;
+                letter-spacing: 0.053rem;
+            }
         }
 
         &-description {
@@ -80,9 +144,15 @@
             color: $dark-l;
             font-weight: 400;
             font-size: 15px;
-            line-height: 17px;
+            line-height: 18px;
             margin-top: 20px;
-            letter-spacing: 0.9px;
+            letter-spacing: 0.96px;
+
+            @include mobile {
+                line-height: 29px;
+                letter-spacing: 0rem;
+                margin-top: 18px;
+            }
         }
     }
 }
