@@ -3517,6 +3517,11 @@ type-is@~1.6.18:
     media-typer "0.3.0"
     mime-types "~2.1.24"
 
+type@module:
+  version "2.7.0"
+  resolved "https://registry.yarnpkg.com/type/-/type-2.7.0.tgz#aaff4ac90514e0dc1095b54af70505ef16cf00a2"
+  integrity sha512-NybX0NBIssNEj1efLf1mqKAtO4Q/Np5mqpa57be81ud7/tNHIXn48FDVXiyGMBF90FfXc5o7RPsuRQrPzgMOMA==
+
 unique-filename@^1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/unique-filename/-/unique-filename-1.1.1.tgz#1d69769369ada0583103a1e6ae87681b56573230"

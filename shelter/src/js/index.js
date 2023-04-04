@@ -1,3 +1,6 @@
 import '../styles/app.scss';
+import { popup } from './features/popup.js';
 
-console.log('100/100. Все пункты выполнены');
+window.addEventListener('load', () => {
+    popup();
+})
