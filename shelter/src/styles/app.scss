@@ -12,10 +12,14 @@ html {
     scroll-behavior: smooth;
 }
 
-body {
+.body {
     display: flex;
     justify-content: center;
     margin: 0;
+}
+
+.body-inactive {
+    overflow-y: hidden;
 }
 
 .wrapper {
