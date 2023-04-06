@@ -3,15 +3,19 @@
 @import './pets/header.scss';
 @import './pets/cards.scss';
 @import './main/footer.scss';
+@import './main/modalWindow.scss';
 
 html {
     scroll-behavior: smooth;
 }
 
-
-body {
+.body {
     display: flex;
     justify-content: center;
+}
+
+.body-inactive {
+    overflow-y: hidden;
 }
 
 .wrapper {
