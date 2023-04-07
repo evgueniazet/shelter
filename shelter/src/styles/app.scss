@@ -16,7 +16,6 @@ html {
     display: flex;
     justify-content: center;
     margin: 0;
-    // overflow: hidden;
 }
 
 .body-inactive {
@@ -28,7 +27,6 @@ html {
 }
 
 .shadow {
-    // visibility: hidden;
     display: none;
     position: fixed;
     left: 0;
@@ -41,8 +39,5 @@ html {
 }
 
 .shadow-active {
-    // visibility:;
     display: block;
-    // opacity: 0.5;
-    // z-index: 0;
 }

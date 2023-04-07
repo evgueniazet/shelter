@@ -31,6 +31,7 @@ export const burgerMenu = () => {
 
     const handleBurgerLinkClick = () => {
         removeBurgerMenu();
+        shadow.classList.remove('shadow-active');
     };
 
     window.addEventListener('resize', () => {
