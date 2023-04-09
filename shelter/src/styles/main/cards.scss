@@ -44,10 +44,16 @@
     }
 
     &-container {
+        position: relative;
+        width: 100%;
+    }
+
+    &-section {
         display: flex;
-        justify-content: center;
+        position: relative;
         margin-top: 60px;
         overflow: hidden;
+        height: 428px;
 
         @include tablet {
             justify-content: flex-start;
@@ -58,17 +64,62 @@
         }
     }
 
+    &-default {
+        display: flex;
+        position: relative;
+        // z-index: 2;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        min-width: 100%;
+
+        @include tablet {
+            width: 75vw;
+        }
+
+        @include mobile {
+            width: 83vw;
+        }
+    }
+
+
+    &-prev {
+        position: absolute;
+        left: -100%;
+        transition: left 1s ease;
+    }
+
+    &-active {
+        position: absolute;
+        left: 0;
+        transition: left 1s ease;
+    }
+
+    &-next {
+        position: absolute;
+        left: 100%;
+        transition: left 1s ease;
+    }
+
+
+
     &-button-left {
         position: absolute;
         left: 0;
-        bottom: 43.8%;
+        bottom: 38%;
         background-color: transparent;
         border-radius: 50%;
         border: solid 2px $primary;
         height: 51px;
         width: 52px;
+        z-index: 1;
         cursor: pointer;
         transition: background-color .3s linear;
+
+        &-inactive {
+            pointer-events: none;
+        }
 
         &:hover {
             background-color: $primary-light;
@@ -78,21 +129,27 @@
 
         @include mobile {
             left: 19%;
-            bottom: 13.5%;
+            bottom: -16.5%;
         }
     }
 
     &-button-right {
         position: absolute;
         right: 0;
-        bottom: 43.8%;
+        bottom: 38%;
         background-color: transparent;
         border-radius: 50%;
         height: 51px;
         width: 52px;
         border: solid 2px $primary;
         cursor: pointer;
+        z-index: 1;
+
         transition: background-color .3s linear;
+
+        &-inactive {
+            pointer-events: none;
+        }
 
         &:hover {
             background-color: $primary-light;
@@ -102,7 +159,7 @@
 
         @include mobile {
             right: 19%;
-            bottom: 13.5%;
+            bottom: -16.5%;
         }
     }
 
@@ -134,19 +191,6 @@
     }
 }
 
-.container {
-    width: 988px;
-    display: flex;
-    justify-content: space-between;
-
-    @include tablet {
-        width: 75vw;
-    }
-
-    @include mobile {
-        width: 83vw;
-    }
-}
 
 .card {
     background-color: $light-s;

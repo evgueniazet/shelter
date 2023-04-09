@@ -10,6 +10,7 @@ import charly from '../images/pets-charly.png';
 
 export const pets = [
     {
+        "id": 0,
         "name": "Jennifer",
         "img": jennifer,
         "type": "Dog",
@@ -21,6 +22,7 @@ export const pets = [
         "parasites": ["none"]
     },
     {
+        "id": 1,
         "name": "Sophia",
         "img": sophia,
         "type": "Dog",
@@ -32,6 +34,7 @@ export const pets = [
         "parasites": ["none"]
     },
     {
+        "id": 2,
         "name": "Woody",
         "img": woody,
         "type": "Dog",
@@ -43,6 +46,7 @@ export const pets = [
         "parasites": ["none"]
     },
     {
+        "id": 3,
         "name": "Scarlett",
         "img": scarlet,
         "type": "Dog",
@@ -54,6 +58,7 @@ export const pets = [
         "parasites": ["none"]
     },
     {
+        "id": 4,
         "name": "Katrine",
         "img": katrine,
         "type": "Cat",
@@ -65,6 +70,7 @@ export const pets = [
         "parasites": ["none"]
     },
     {
+        "id": 5,
         "name": "Timmy",
         "img": timmy,
         "type": "Cat",
@@ -76,6 +82,7 @@ export const pets = [
         "parasites": ["none"]
     },
     {
+        "id": 6,
         "name": "Freddie",
         "img": freddie,
         "type": "Cat",
@@ -87,6 +94,7 @@ export const pets = [
         "parasites": ["none"]
     },
     {
+        "id": 7,
         "name": "Charly",
         "img": charly,
         "type": "Dog",
