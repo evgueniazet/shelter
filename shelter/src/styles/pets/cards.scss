@@ -79,6 +79,22 @@
         font-family: $georgia;
         background-color: transparent;
 
+        border: 2px solid $primary;
+        color: $dark-3xl;
+        cursor: pointer;
+        transition: background-color .3s linear;
+
+        &:hover {
+            background-color: $primary-light;
+            border: none;
+            transition: background-color .3s linear;
+        }
+
+        &-inactive {
+            border: 2px solid $dark-s;
+            color: $dark-s;
+        }
+
         &:not(:first-child) {
             margin-left: 20px;
 
@@ -87,46 +103,10 @@
             }
         }
 
-        &:nth-child(1) {
-            border: 2px solid $dark-s;
-            color: $dark-s;
-        }
-
-        &:nth-child(2) {
-            border: 2px solid $dark-s;
-            color: $dark-s;
-        }
-
         &:nth-child(3) {
             border: none;
             background-color: $primary;
             color: $dark-3xl;
-        }
-
-        &:nth-child(4) {
-            border: 2px solid $primary;
-            color: $dark-3xl;
-            cursor: pointer;
-            transition: background-color .3s linear;
-
-            &:hover {
-                background-color: $primary-light;
-                border: none;
-                transition: background-color .3s linear;
-            }
-        }
-
-        &:nth-child(5) {
-            border: 2px solid $primary;
-            color: $dark-3xl;
-            cursor: pointer;
-            transition: background-color .3s linear;
-
-            &:hover {
-                background-color: $primary-light;
-                border: none;
-                transition: background-color .3s linear;
-            }
         }
     }
 }
