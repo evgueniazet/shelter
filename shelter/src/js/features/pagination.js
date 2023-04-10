@@ -8,19 +8,58 @@ export const pagination = () => {
     let count = 1;
     let petsArr = [];
 
-    if (count === 1) {
-        cardsButton[0].classList.add('cards-button-inactive');
-        cardsButton[1].classList.add('cards-button-inactive');
-    }
+    cardsButton[0].classList.add('cards-button-inactive');
+    cardsButton[1].classList.add('cards-button-inactive');
 
     const initialWidth = document.body.offsetWidth;
 
+    shuffleArray(pets);
+
+    for (let i = 0; i < 6; i++) {
+
+        const sliceArr = (arr, size) => {
+            const res = [];
+            for (let i = 0; i < arr.length; i += size) {
+                const chunk = arr.slice(i, i + size);
+                res.push(chunk);
+            }
+            return res;
+        };
+
+        const slicedArray = sliceArr(pets, 3);
+
+        slicedArray.forEach((array) => {
+            shuffleArray(array);
+            array.forEach((elem) => {
+                petsArr.push(elem);
+            })
+        })
+    }
+
     const handleResize = () => {
         const width = document.body.offsetWidth;
-        getPagesQuantity(width);
-        getPetsOnPageQuantity(width);
-        console.log('pagesQuantity', pagesQuantity);
-        cardsButton[2].innerText = pagesQuantity;
+        const newPagesQuantity = getPagesQuantity(width);
+        const newPetsOnPageQuantity = getPetsOnPageQuantity(width);
+
+        if (petsOnPageQuantity !== newPetsOnPageQuantity) {
+            const firstCurrentCardIndex = (count - 1) * petsOnPageQuantity;
+            let firstCardIndex = firstCurrentCardIndex;
+            const devisionRest = firstCurrentCardIndex % newPetsOnPageQuantity;
+
+            if (devisionRest) {
+                firstCardIndex = firstCardIndex - devisionRest;
+            }
+
+            const lastCardIndex = firstCardIndex + newPetsOnPageQuantity;
+            count = firstCardIndex === 0 ? 1 : firstCardIndex / newPetsOnPageQuantity + 1;
+
+            cardsContainer.querySelectorAll('.card').forEach((item) => item.parentNode.removeChild(item));
+            drawCards(firstCardIndex, lastCardIndex, petsArr, cardsContainer);
+
+            petsOnPageQuantity = newPetsOnPageQuantity;
+            pagesQuantity = newPagesQuantity;
+            cardsButton[2].innerText = count;
+        }
     };
 
     const getPagesQuantity = (width) => {
@@ -43,56 +82,11 @@ export const pagination = () => {
         }
     };
 
-    const pagesQuantity = getPagesQuantity(initialWidth);
-    const petsOnPageQuantity = getPetsOnPageQuantity(initialWidth);
-
-    for (let i = 0; i < 6; i++) {
-
-        shuffleArray(pets);
-
-        const sliceArr = (arr, size) => {
-            const res = [];
-            for (let i = 0; i < arr.length; i += size) {
-                const chunk = arr.slice(i, i + size);
-                res.push(chunk);
-            }
-            return res;
-        };
-
-        const slicedArray = sliceArr(pets, 3);
-
-        slicedArray.forEach((array) => {
-            shuffleArray(array);
-            array.forEach((elem) => {
-                petsArr.push(elem);
-            })
-        })
-    }
-
-    const drawInitialCards = () => {
-        const initialArr = petsArr.slice(0, petsOnPageQuantity);
-        initialArr.forEach((item) => cardsContainer.appendChild(createCard(item)));
+    const drawCards = (startIndex, endIndex, arr, targetElement) => {
+        const pets = arr.slice(startIndex, endIndex);
+        pets.forEach((item) => targetElement.appendChild(createCard(item)));
     };
 
-    drawInitialCards();
-
-    const drawCards = (quantity) => {
-        const number = cardsButton[2].innerText;
-        const startIndex = (number - 1) * quantity;
-        const endIndex = number * quantity;
-        const drawPets = petsArr.slice(startIndex, endIndex);
-        drawPets.forEach((item) => cardsContainer.appendChild(createCard(item)));
-    };
-
-    const drawLastCards = (quantity) => {
-        const number = cardsButton[2].innerText;
-        const startIndex = petsArr.length - quantity;
-        const endIndex = number * quantity;
-        const drawPets = petsArr.slice(startIndex, endIndex);
-        drawPets.forEach((item) => cardsContainer.appendChild(createCard(item)));
-    };
-
-    cardsButton[2].innerText = count;
 
     const activateLeftButtons = () => {
         cardsButton[0].classList.remove('cards-button-inactive');
@@ -114,39 +108,52 @@ export const pagination = () => {
         cardsButton[4].classList.add('cards-button-inactive');
     };
 
+    let pagesQuantity = getPagesQuantity(initialWidth);
+    let petsOnPageQuantity = getPetsOnPageQuantity(initialWidth);
+    cardsButton[2].innerText = count;
+
+    drawCards(0, petsOnPageQuantity, petsArr, cardsContainer);
+
     cardsButton[0].addEventListener('click', () => {
         cardsButton[2].innerText = 1;
         count = 1;
         cardsContainer.querySelectorAll('.card').forEach((item) => item.parentNode.removeChild(item));
-        drawInitialCards();
+        drawCards(0, petsOnPageQuantity, petsArr, cardsContainer);
         inactivateLeftButtons();
         activateRightButtons();
     })
 
     cardsButton[1].addEventListener('click', () => {
-        if (cardsButton[2].innerText > 1) {
-            count = count - 1;
+        if (count > 1) {
+            count--;
             cardsButton[2].innerText = count;
             cardsContainer.querySelectorAll('.card').forEach((item) => item.parentNode.removeChild(item));
-            drawCards(petsOnPageQuantity);
-        } else if (cardsButton[2].innerText == 1) {
-            inactivateLeftButtons();
+            const startIndex = (count - 1) * petsOnPageQuantity;
+            const endIndex = count * petsOnPageQuantity;
+            drawCards(startIndex, endIndex, petsArr, cardsContainer);
+        } else if (count  == 1) {
+            cardsButton[2].innerText = count;
             activateRightButtons();
+            inactivateLeftButtons();
+            console.log('count', count);
         }
     })
 
     cardsButton[3].addEventListener('click', () => {
-        if (cardsButton[2].innerText < pagesQuantity) {
+        if (count < pagesQuantity) {
             count++;
             activateLeftButtons();
             cardsButton[2].innerText = count;
             cardsContainer.querySelectorAll('.card').forEach((item) => item.parentNode.removeChild(item));
-            drawCards(petsOnPageQuantity);
-        } else if (cardsButton[2].innerText == pagesQuantity) {
+
+            const startIndex = (count - 1) * petsOnPageQuantity;
+            const endIndex = count * petsOnPageQuantity;
+            drawCards(startIndex, endIndex, petsArr, cardsContainer);
+        } else if (count == pagesQuantity) {
+            // count++;
+            cardsButton[2].innerText = count;
             activateLeftButtons()
             inactivateRightButtons();
-            cardsButton[3].disabled = true;
-            cardsButton[4].disabled = true;
         }
     })
 
@@ -154,7 +161,9 @@ export const pagination = () => {
         cardsButton[2].innerText = pagesQuantity;
         count = pagesQuantity;
         cardsContainer.querySelectorAll('.card').forEach((item) => item.parentNode.removeChild(item));
-        drawLastCards(petsOnPageQuantity);
+        const startIndex = petsArr.length - petsOnPageQuantity;
+        const endIndex = count * petsOnPageQuantity;
+        drawCards(startIndex, endIndex, petsArr, cardsContainer);
         activateLeftButtons();
         inactivateRightButtons();
     })

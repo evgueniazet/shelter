@@ -1,3 +1,6 @@
+import { setPetCardEventListener } from "../features/popup";
+import { pets } from '../data';
+
 export const createCard = (data) => {
     const card = document.createElement('div');
     card.classList.add('card');
@@ -13,7 +16,9 @@ export const createCard = (data) => {
 
     const cardButton = document.createElement('button');
     cardButton.classList.add('card-button');
-    cardButton.innerText = 'Learn More';
+    cardButton.innerText = 'Learn more';
+
+    setPetCardEventListener(card, pets);
 
     card.append(img, h4, cardButton);
 

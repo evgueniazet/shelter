@@ -15,20 +15,14 @@ export const slider = () => {
 
     shuffleArray(pets);
 
-    // let activeCardsArr = [pets[0], pets[1], pets[2]];
-    // let restCardsArr = [pets[3], pets[4], pets[5]];
     let activeCardsArr = pets.filter((_, index) => index < cardsQuantity);
     let prevCardsArr = pets.filter((_, index) => index >= cardsQuantity && index < cardsQuantity * 2);
     let nextCardsArr = pets.filter((_, index) => index >= cardsQuantity * 2 - 1 && index < cardsQuantity * 3 - 1);
-    // let cardsMemory = [...prevCardsArr, ...activeCardsArr, ...nextCardsArr];
     const cardsMemory = {
         prev: prevCardsArr,
         active: activeCardsArr,
         next: nextCardsArr
     };
-
-    // console.log('prevCardsArr', prevCardsArr);
-    // console.log('nextCardsArr', nextCardsArr);
 
     const handleButtonRight = () => {
         const cards = document.querySelectorAll('.cards-default');
@@ -40,10 +34,7 @@ export const slider = () => {
         prevCardsArr = activeCardsArr;
         activeCardsArr = nextCardsArr;
 
-        // const newRestCardsArr = pets.filter((pet) => restCardsArr.every((item) => item.name !== pet.name));
         const newNextCardsArr = pets.filter((pet) => activeCardsArr.every((item) => item.name !== pet.name));
-
-        // const newPrevCardsArr = pets.filter((pet) => restCardsArr.every((item) => item.name !== pet.name));
 
         shuffleArray(newNextCardsArr);
 
@@ -53,7 +44,6 @@ export const slider = () => {
 
         cardsNext.querySelectorAll('.card').forEach((item) => item.parentNode.removeChild(item));
         nextCardsArr.forEach((item) => cardsNext.appendChild(createCard(item)));
-        // cardsMemory = [...prevCardsArr, ...activeCardsArr, ...nextCardsArr];
         cardsMemory.prev = prevCardsArr;
         cardsMemory.active = activeCardsArr;
         cardsMemory.next = nextCardsArr;
@@ -75,7 +65,6 @@ export const slider = () => {
         activeCardsArr = prevCardsArr;
 
         const newPrevCardsArr = pets.filter((pet) => activeCardsArr.every((item) => item.name !== pet.name));
-        console.log('newPrevCardsArr', newPrevCardsArr);
 
         shuffleArray(newPrevCardsArr);
 
@@ -86,7 +75,6 @@ export const slider = () => {
 
         cardsPrev.querySelectorAll('.card').forEach((item) => item.parentNode.removeChild(item));
         prevCardsArr.forEach((item) => cardsPrev.appendChild(createCard(item)));
-        // cardsMemory = [...prevCardsArr, ...activeCardsArr, ...nextCardsArr];
         cardsMemory.prev = prevCardsArr;
         cardsMemory.active = activeCardsArr;
         cardsMemory.next = nextCardsArr;
@@ -107,19 +95,14 @@ export const slider = () => {
             const memoizedNextCards = cardsMemory.next;
 
             if (newCardsQuantity < cardsQuantity) {
-                console.log('memoizedActiveCards1', memoizedActiveCards);
                 const newActiveCards = memoizedActiveCards.filter((_, index) => index < newCardsQuantity);
-                console.log('newActiveCards1', newActiveCards);
                 const restActiveCards = memoizedActiveCards.filter((_, index) => index >= newCardsQuantity);
-                console.log('restActiveCards', restActiveCards);
                 let newNextCards = [];
                 const newPrevCards = memoizedPrevCards.reverse().filter((_, index) => index < newCardsQuantity);
-                console.log('newPrevCards', newPrevCards);
 
                 if (restActiveCards.length < newCardsQuantity) {
                     const cardsToAddQuantity = newCardsQuantity - restActiveCards.length;
                     const activeCardsToAdd = memoizedNextCards.filter((_, index) => index < cardsToAddQuantity);
-                    console.log('activeCardsToAdd', activeCardsToAdd);
 
                     newNextCards = [...restActiveCards, ...activeCardsToAdd]
                 } else if (restActiveCards.length === newCardsQuantity) {
@@ -142,28 +125,20 @@ export const slider = () => {
                     cards[2].appendChild(createCard(pet));
                 });
             } else if (newCardsQuantity > cardsQuantity) {
-                console.log('memoizedActiveCards2', memoizedActiveCards);
                 let newActiveCards = memoizedActiveCards.filter((_, index) => index < newCardsQuantity);
-                console.log('newActiveCards2', newActiveCards);
                 let restActiveCards = memoizedActiveCards.filter((_, index) => index >= newCardsQuantity);
-                console.log('restActiveCards2', restActiveCards);
                 let restNextCards = memoizedNextCards;
-                console.log('restNextCards2', restNextCards);
                 let restPrevCards = memoizedPrevCards;
-                console.log('restPrevCards2', restNextCards);
 
                 if (newActiveCards.length < newCardsQuantity) {
                     const activeCardsFromNextDiff = newCardsQuantity - newActiveCards.length;
 
                     const additionalActiveCardsFromNext = memoizedNextCards.filter((_, index) => index < activeCardsFromNextDiff);
-                    console.log('additionalActiveCardsFromNext2', additionalActiveCardsFromNext);
                     restNextCards = memoizedNextCards.filter((_, index) => index >= activeCardsFromNextDiff);
-                    console.log('restNextCards2', restNextCards);
                     let activeCardsToCreate = [];
                     let additionalActiveCardsFromPrev = [];
 
                     if (additionalActiveCardsFromNext.length < activeCardsFromNextDiff) {
-                        console.log('1');
                         const activeCardsFromPrevQuantity = activeCardsFromNextDiff - additionalActiveCardsFromNext.length;
 
                         additionalActiveCardsFromPrev = memoizedPrevCards.filter((_, index) => index < activeCardsFromPrevQuantity);
@@ -171,7 +146,6 @@ export const slider = () => {
 
                         if (additionalActiveCardsFromPrev.length < activeCardsFromPrevQuantity) {
                             const activeCardsToCreateQuantity = activeCardsFromPrevQuantity - additionalActiveCardsFromPrev.length;
-                            console.log('2');
 
                             activeCardsToCreate = pets
                                 .filter((pet) => [...newActiveCards, ...additionalActiveCardsFromNext, ...additionalActiveCardsFromPrev]
@@ -237,7 +211,6 @@ export const slider = () => {
             cardsQuantity = newCardsQuantity;
         }
     };
-
 
     buttonRight.forEach((button) => {
         button.addEventListener('click', handleButtonRight);

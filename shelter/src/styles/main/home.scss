@@ -233,7 +233,6 @@
         @include mobile {
             display: block;
             margin-right: 6px;
-            margin-top: -8px;
         }
 
         &-item {
@@ -262,7 +261,7 @@
             z-index: 1;
 
             &-active {
-               visibility: visible;
+                visibility: visible;
                 right: 0;
                 transition: right .5s ease, visibility .5s ease;
             }
@@ -272,6 +271,7 @@
                 display: flex;
                 flex-direction: column;
                 align-items: center;
+                margin-top: 60px;
             }
         }
 
@@ -280,10 +280,13 @@
             color: $dark-s;
             font-size: 32px;
             text-decoration: none;
-            line-height: 31px;
+            line-height: 38px;
             cursor: pointer;
             transition: color .3s ease;
-            margin-top: 40px;
+
+            &:not(:first-child) {
+                margin-top: 54px;
+            }
 
             &:active {
                 border-bottom: 3px solid $primary;
