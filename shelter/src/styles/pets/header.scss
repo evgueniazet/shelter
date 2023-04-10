@@ -91,7 +91,7 @@
             justify-content: center;
             position: absolute;
             top: 0;
-            right: -59%;
+            right: -320px;
             width: 320px;
             height: 100vh;
             background-color: $dark-3xl;
@@ -100,7 +100,7 @@
 
             &-active {
                 visibility: visible;
-                right: -14px;
+                right: 0;
                 transition: right .5s ease, visibility .5s ease;
             }
 

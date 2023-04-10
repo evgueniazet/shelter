@@ -38,6 +38,7 @@ export const burgerMenu = () => {
         window.innerWidth;
         if (window.innerWidth > allowableWidth) {
             removeBurgerMenu();
+            shadow.classList.remove('shadow-active');
         }
     });
 

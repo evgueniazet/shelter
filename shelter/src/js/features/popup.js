@@ -1,4 +1,5 @@
 export const popup = (pets) => {
+
     const cards = document.querySelectorAll('.card');
     const closeButton = document.querySelector('.modal-window-button');
     const modalWindow = document.querySelector('.modal-window');

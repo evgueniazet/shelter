@@ -16,6 +16,7 @@ html {
     display: flex;
     justify-content: center;
     margin: 0;
+    width: 100%;
 }
 
 .body-inactive {
@@ -23,7 +24,9 @@ html {
 }
 
 .wrapper {
-    width: 100vw;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
 }
 
 .shadow {
@@ -35,7 +38,6 @@ html {
     width: 100vw;
     background: #000;
     opacity: 0.9;
-    z-index: 0;
 }
 
 .shadow-active {

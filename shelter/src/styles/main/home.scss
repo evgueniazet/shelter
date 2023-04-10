@@ -4,6 +4,7 @@
 .home {
     display: flex;
     justify-content: center;
+    overflow: hidden;
     background-image: url('../../images/background.svg');
     background-size: cover;
     padding: 30px 40px 0 40px;
@@ -136,7 +137,7 @@
 
         @include tablet {
             justify-content: flex-end;
-            width: 100vw;
+            width: 100%;
         }
     }
 
@@ -252,8 +253,8 @@
             align-items: center;
             justify-content: center;
             position: absolute;
-            top: -50%;
-            right: -59%;
+            top: 0;
+            right: -320px;
             width: 320px;
             height: 100vh;
             background-color: $dark-3xl;
@@ -261,8 +262,8 @@
             z-index: 1;
 
             &-active {
-                visibility: visible;
-                right: -14px;
+               visibility: visible;
+                right: 0;
                 transition: right .5s ease, visibility .5s ease;
             }
 
