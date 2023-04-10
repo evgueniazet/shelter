@@ -60,6 +60,14 @@
 
     &-burger {
         display: none;
+        transition: transform .5s ease;
+
+        &-active {
+            position: relative;
+            z-index: 2;
+            transform: rotate(90deg);
+            transition: transform .5s ease;
+        }
 
         @include mobile {
             display: block;
@@ -73,6 +81,61 @@
                 width: 30px;
                 height: 2px;
                 background-color: $black;
+            }
+        }
+
+        &-nav {
+            display: flex;
+            visibility: hidden;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            top: 0;
+            right: -320px;
+            width: 320px;
+            height: 100vh;
+            background-color: $dark-3xl;
+            transition: right .5s ease, visibility .5s ease;
+            z-index: 1;
+
+            &-active {
+                visibility: visible;
+                right: 0;
+                transition: right .5s ease, visibility .5s ease;
+            }
+
+            &-wrapper {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        &-link {
+            font-family: $arial;
+            color: $dark-s;
+            font-size: 32px;
+            text-decoration: none;
+            line-height: 31px;
+            cursor: pointer;
+            transition: color .3s ease;
+            margin-top: 40px;
+
+            &:active {
+                border-bottom: 3px solid $primary;
+                color: $light-s;
+                cursor: auto;
+            }
+
+            &:first-child {
+                border-bottom: 3px solid $primary;
+                color: $light-s;
+                cursor: auto;
+            }
+
+            &:hover {
+                color: $light-s;
+                transition: color .3s ease;
             }
         }
     }

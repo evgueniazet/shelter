@@ -1,0 +1,130 @@
+@import '../variables.scss';
+@import '../mixins.scss';
+
+.modal-window {
+    display: none;
+    background-color: transparent;
+
+
+    // @include tablet {
+    //     width: 68%;
+    // }
+
+    // @include mobile {
+    //     width: 240px;
+    // }
+
+    &-button {
+        position: absolute;
+        top: 13%;
+        right: 11.5%;
+        font-size: 28px;
+        background-color: transparent;
+        color: $dark-3xl;
+        border-radius: 50%;
+        height: 51px;
+        width: 52px;
+        border: solid 2px $primary;
+        cursor: pointer;
+        transition: border .5s ease, color .5s ease;
+
+        &:hover {
+            border: solid 2px $orange;
+            color: $light-s;
+            transition: border .5s ease, color .5s ease;
+        }
+    }
+
+    &-img {
+        height: 500px;
+    }
+
+    &-title {
+        margin: 0;
+        font-family: $georgia;
+        font-weight: 400;
+        font-size: 35px;
+        line-height: 45px;
+        color: $black;
+        letter-spacing: 0.1rem;
+    }
+
+    &-subtitle {
+        font-family: $georgia;
+        color: $black;
+        font-size: 20px;
+        line-height: 23px;
+        font-weight: 400;
+        margin: 0;
+        margin-top: 10px;
+        letter-spacing: 0.08rem;
+    }
+
+    &-description {
+        display: block;
+        font-family: $georgia;
+        color: $black;
+        font-weight: 400;
+        line-height: 17px;
+        font-size: 15px;
+        margin-top: 40px;
+        letter-spacing: 0.057rem;
+    }
+
+    &-list {
+        margin: 0;
+        margin-top: 41px;
+
+        &-item {
+            margin-top: 11px;
+            font-family: $georgia;
+            line-height: 17px;
+            font-size: 15px;
+            font-weight: bold;
+            letter-spacing: 0.06rem;
+
+            &::before {
+                content: '•';
+                color: $primary;
+                margin-right: 5px;
+            }
+        }
+
+        &-text {
+            font-weight: normal;
+        }
+    }
+
+    &-content {
+        display: flex;
+        box-sizing: border-box;
+        padding-right: 17px;
+
+        &-wrapper {
+            margin-left: 26px;
+            margin-top: 50px;
+        }
+    }
+
+    &-container {
+        display: block;
+        background-color: $light-s;
+        width: 70%;
+        border-radius: 9px;
+        overflow: hidden;
+    }
+
+    &-active {
+        position: fixed;
+        // bottom: 48px;
+        left: 0;
+        height: 100vh;
+        width: 100vw;
+        background-color: rgba($dark-3xl, 0.7);
+        transition: background-color .5s ease;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 100;
+    }
+}
