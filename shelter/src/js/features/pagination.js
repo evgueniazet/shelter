@@ -135,7 +135,6 @@ export const pagination = () => {
             cardsButton[2].innerText = count;
             activateRightButtons();
             inactivateLeftButtons();
-            console.log('count', count);
         }
     })
 
@@ -150,7 +149,6 @@ export const pagination = () => {
             const endIndex = count * petsOnPageQuantity;
             drawCards(startIndex, endIndex, petsArr, cardsContainer);
         } else if (count == pagesQuantity) {
-            // count++;
             cardsButton[2].innerText = count;
             activateLeftButtons()
             inactivateRightButtons();
